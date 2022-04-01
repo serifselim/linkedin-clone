@@ -1,29 +1,28 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyled = createGlobalStyle`
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+const GlobalStyle = createGlobalStyle`
+     *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
 
-    html{
-        font-size: 10px;
-    }
+     html{
+         font-size: 10px;
+     }
 
-    body{
-        font-family: sans-serif;
-        background: #F3F2EF;
-    }
+     body{
+         font-family: sans-serif;
+         background: #F3F2EF;
+     }
 
-    li{
-        list-style: none;
-    }
+     li{
+         list-style: none;
+     }
 
-    a{
-        text-decoration: none;
+     a{
+         text-decoration: none;
     }
-
 `;
 
-export default GlobalStyled;
+export default GlobalStyle;
