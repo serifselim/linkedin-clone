@@ -7,6 +7,12 @@ export const StyledHomeContainer = styled.main`
     display: grid;
     grid-template-columns: 2fr 5fr 3fr;
     grid-gap: 2.4rem;
+    
+    & > hr{
+        display: block;
+        background-color: red;
+        border: .1px solid #6666;
+    }
 
     & > *:last-child{
         @media (max-width: 768px) {
@@ -26,3 +32,15 @@ export const StyledHomeContainer = styled.main`
     }
  
 `;
+
+
+export const Main = styled.section`
+    display: flex;
+    flex-direction: column;
+
+    & > hr{
+        border: .1px solid #6666;
+        margin-bottom: 2rem;
+        border-radius: 50%;
+    }
+`
