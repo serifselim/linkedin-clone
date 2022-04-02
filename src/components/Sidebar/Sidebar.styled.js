@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BsFillBookmarkFill } from 'react-icons/bs'
 
 export const StyledSidebarContainer = styled.section`
     display: flex;
@@ -41,8 +42,52 @@ export const StyledUserNameSurname = styled.h3`
 `
 
 export const StyledUserMajor = styled.span`
-display: block;
+    display: block;
     font-size: 1.2rem;
     margin-top: .8rem;
     color: rgba(0,0,0,0.5);
+`;
+
+export const StyledSidebarViewers = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+`;
+
+export const StyledViewersDetails = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+`
+
+export const StyledViewerTitle = styled.span`
+    font-size: 1.2rem;
+    color: #9F9F9F;
+    font-weight: bold;
+`;
+
+export const StyledViewerValue = styled.span`
+    color: #0a66c2;
+    font-weight: bold;
+    font-size: 1.3rem;
+`;
+
+export const StyleSidebardItems = styled.div`
+    display: flex;
+    align-self: flex-start;
+    padding: 1.2rem;
+    align-items: center;
+`;
+
+export const StyledItemIcon = styled(BsFillBookmarkFill)`
+    margin-right: 1rem;
+    color:#191919;
+`;
+
+export const StlyedItemText = styled.span`
+    color:#191919;
+    font-size: 1.2em;
+    font-weight: bold;
 `;
