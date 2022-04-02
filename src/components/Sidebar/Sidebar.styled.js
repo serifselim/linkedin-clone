@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BsFillBookmarkFill } from 'react-icons/bs'
 
-export const StyledSidebarContainer = styled.section`
+export const SidebarContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +9,7 @@ export const StyledSidebarContainer = styled.section`
     border-radius: .8rem;
 `;
 
-export const StyledBackground = styled.img`
+export const Background = styled.img`
     position: absolute;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@ export const StyledBackground = styled.img`
     object-fit: cover;
 `;
 
-export const StyledSidebarProfile = styled.div`
+export const SidebarProfile = styled.div`
     padding-bottom: 1.2rem;
     width: 100%;
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -28,7 +28,7 @@ export const StyledSidebarProfile = styled.div`
     text-align: center;
 `;
 
-export const StyledProfileImage = styled.img`
+export const ProfileImage = styled.img`
     border: 1px solid white;
     border-radius: 50%;
     width: 7.2rem;
@@ -36,19 +36,19 @@ export const StyledProfileImage = styled.img`
     margin: 2.2rem 0;
 `;
 
-export const StyledUserNameSurname = styled.h3`
+export const ProfileTitle = styled.h3`
     font-size: 1.6rem;
     font-weight: bold;
 `
 
-export const StyledUserMajor = styled.span`
+export const ProfileMajor = styled.span`
     display: block;
     font-size: 1.2rem;
     margin-top: .8rem;
     color: rgba(0,0,0,0.5);
 `;
 
-export const StyledSidebarViewers = styled.div`
+export const SidebarViewers = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1.2rem;
@@ -56,37 +56,41 @@ export const StyledSidebarViewers = styled.div`
     border-bottom: 1px solid rgba(0,0,0,0.1);
 `;
 
-export const StyledViewersDetails = styled.div`
+export const ViewerContent = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    align-items: center;
+
+    &:first-child{
+        margin-bottom: 1rem;
+    }
 `
 
-export const StyledViewerTitle = styled.span`
+export const ViewerTitle = styled.span`
     font-size: 1.2rem;
     color: #9F9F9F;
     font-weight: bold;
 `;
 
-export const StyledViewerValue = styled.span`
+export const ViewerValue = styled.span`
     color: #0a66c2;
     font-weight: bold;
     font-size: 1.3rem;
 `;
 
-export const StyleSidebardItems = styled.div`
+export const SidebarItem = styled.div`
     display: flex;
     align-self: flex-start;
     padding: 1.2rem;
     align-items: center;
 `;
 
-export const StyledItemIcon = styled(BsFillBookmarkFill)`
+export const ItemIcon = styled(BsFillBookmarkFill)`
     margin-right: 1rem;
     color:#191919;
 `;
 
-export const StlyedItemText = styled.span`
+export const ItemText = styled.span`
     color:#191919;
     font-size: 1.2em;
     font-weight: bold;

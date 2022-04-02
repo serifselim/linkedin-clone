@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledLogo, StyledSearchIcon, StyledSearchInput, StyledSearchBox, StyledHeaderContainer, StyledHeaderContent, StyledNav, StyledNavList, StyledNavListItem, StyledProfile } from './Header.styled';
+import { Logo, SearchIcon, SearchInput, SearchBox, HeaderContainer, HeaderContent, HeaderNav, NavList, NavListItem, HeaderProfile } from './Header.styled';
 import { ImHome } from 'react-icons/im';
 import { BsPeopleFill } from 'react-icons/bs';
 import { MdOutlineWork } from 'react-icons/md';
@@ -9,45 +9,45 @@ import { IMAGE_URL } from '../../imagePaths';
 
 const Header = () => {
     return (
-        <StyledHeaderContainer>
-            <StyledHeaderContent>
-                <StyledLogo size={35} />
-                <StyledSearchBox>
-                    <StyledSearchIcon size={20} />
-                    <StyledSearchInput placeholder='Arama yap' />
-                </StyledSearchBox>
+        <HeaderContainer>
+            <HeaderContent>
+                <Logo size={35} />
+                <SearchBox>
+                    <SearchIcon size={20} />
+                    <SearchInput placeholder='Arama yap' />
+                </SearchBox>
 
-                <StyledNav>
-                    <StyledNavList>
-                        <StyledNavListItem active>
+                <HeaderNav>
+                    <NavList>
+                        <NavListItem active>
                             <ImHome size={25} />
                             <span>Ana Sayfa</span>
-                        </StyledNavListItem>
-                        <StyledNavListItem>
+                        </NavListItem>
+                        <NavListItem>
                             <BsPeopleFill size={25} />
                             <span>Ağım</span>
-                        </StyledNavListItem>
-                        <StyledNavListItem>
+                        </NavListItem>
+                        <NavListItem>
                             <MdOutlineWork size={25} />
                             <span>İş İlanları</span>
-                        </StyledNavListItem>
-                        <StyledNavListItem>
+                        </NavListItem>
+                        <NavListItem>
                             <RiMessage2Fill size={25} />
                             <span>Mesajlaşma</span>
-                        </StyledNavListItem>
-                        <StyledNavListItem>
+                        </NavListItem>
+                        <NavListItem>
                             <IoNotificationsSharp size={25} />
                             <span>Bildirimler</span>
-                        </StyledNavListItem>
-                        <StyledNavListItem>
-                            <StyledProfile src={IMAGE_URL} alt="profile" />
+                        </NavListItem>
+                        <NavListItem>
+                            <HeaderProfile src={IMAGE_URL} alt="profile" />
                             <span>Ben</span>
-                        </StyledNavListItem>
-                    </StyledNavList>
-                </StyledNav>
+                        </NavListItem>
+                    </NavList>
+                </HeaderNav>
 
-            </StyledHeaderContent>
-        </StyledHeaderContainer>
+            </HeaderContent>
+        </HeaderContainer>
     );
 };
 

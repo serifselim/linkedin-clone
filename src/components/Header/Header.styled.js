@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { BsLinkedin } from 'react-icons/bs';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
-export const StyledHeaderContainer = styled.header`
+export const HeaderContainer = styled.header`
     width: 100%;
     height: 6rem;
     background: white;
 `;
 
-export const StyledHeaderContent = styled.div`
+export const HeaderContent = styled.div`
     display: flex;
     align-items: center;
     width: 85%;
@@ -17,17 +17,17 @@ export const StyledHeaderContent = styled.div`
     margin: 0 auto;
 `;
 
-export const StyledLogo = styled(BsLinkedin)`
+export const Logo = styled(BsLinkedin)`
     color: #0F66C3;
     margin-right: 1rem;
 `;
 
-export const StyledSearchBox = styled.div`
+export const SearchBox = styled.div`
     position: relative;
     max-width: 280px;
 `;
 
-export const StyledSearchInput = styled.input`   
+export const SearchInput = styled.input`   
     width: 100%;
     line-height: 1.75;
     font-weight: 400;
@@ -44,7 +44,7 @@ export const StyledSearchInput = styled.input`
     }
 `;
 
-export const StyledSearchIcon = styled(BiSearchAlt2)`
+export const SearchIcon = styled(BiSearchAlt2)`
     position: absolute;
     color: #606163;
     top: 50%;
@@ -59,15 +59,15 @@ export const StyledSearchIcon = styled(BiSearchAlt2)`
     }    
 `
 
-export const StyledNav = styled.nav`
+export const HeaderNav = styled.nav`
     margin-left: auto;
 `;
 
-export const StyledNavList = styled.ul`
+export const NavList = styled.ul`
     display: flex;
 `;
 
-export const StyledNavListItem = styled.li`
+export const NavListItem = styled.li`
     display: flex;
     padding: 1rem;
     font-size: 1.2rem;
@@ -91,7 +91,7 @@ export const StyledNavListItem = styled.li`
     }
 `;
 
-export const StyledProfile = styled.img`
+export const HeaderProfile = styled.img`
     border-radius: 50%;
     width: 25px;
     height: 25px;

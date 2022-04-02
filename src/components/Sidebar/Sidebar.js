@@ -1,51 +1,51 @@
 import React from 'react';
-import { StyledBackground, StyledProfileImage, StyleSidebardItems, StyledSidebarContainer, StyledSidebarProfile, StyledSidebarViewers, StyledUserMajor, StyledUserNameSurname, StyledViewersDetails, StyledViewerTitle, StyledViewerValue, StyledItemIcon, StlyedItemText } from './Sidebar.styled';
+import { Background, ProfileImage, SidebarItem, SidebarContainer, SidebarProfile, SidebarViewers, ProfileMajor, ProfileTitle, ViewerContent, ViewerTitle, ViewerValue, ItemIcon, ItemText } from './Sidebar.styled';
 import { IMAGE_URL, BACKGROUND_URL } from '../../imagePaths';
 
 
 const Sidebar = () => {
     return (
-        <StyledSidebarContainer>
-            <StyledBackground src={BACKGROUND_URL} />
+        <SidebarContainer>
+            <Background src={BACKGROUND_URL} />
 
-            <StyledSidebarProfile>
-                <StyledProfileImage src={IMAGE_URL} />
-                <StyledUserNameSurname>
+            <SidebarProfile>
+                <ProfileImage src={IMAGE_URL} />
+                <ProfileTitle>
                     Yavuz Selim Şerifoğlu
-                </StyledUserNameSurname>
-                <StyledUserMajor>
+                </ProfileTitle>
+                <ProfileMajor>
                     Frontend Developer
-                </StyledUserMajor>
-            </StyledSidebarProfile>
+                </ProfileMajor>
+            </SidebarProfile>
 
-            <StyledSidebarViewers>
-                <StyledViewersDetails>
-                    <StyledViewerTitle>
+            <SidebarViewers>
+                <ViewerContent>
+                    <ViewerTitle>
                         Profilinizi kimler görüntüledi
-                    </StyledViewerTitle>
-                    <StyledViewerValue>
+                    </ViewerTitle>
+                    <ViewerValue>
                         207
-                    </StyledViewerValue>
-                </StyledViewersDetails>
+                    </ViewerValue>
+                </ViewerContent>
 
-                <StyledViewersDetails>
-                    <StyledViewerTitle>
+                <ViewerContent>
+                    <ViewerTitle>
                         Yayınınız için görüntüleme
-                    </StyledViewerTitle>
-                    <StyledViewerValue>
+                    </ViewerTitle>
+                    <ViewerValue>
                         3.703
-                    </StyledViewerValue>
-                </StyledViewersDetails>
-            </StyledSidebarViewers>
+                    </ViewerValue>
+                </ViewerContent>
+            </SidebarViewers>
 
-            <StyleSidebardItems>
-                <StyledItemIcon size={12} />
-                <StlyedItemText>
+            <SidebarItem>
+                <ItemIcon size={12} />
+                <ItemText>
                     Öğelerim
-                </StlyedItemText>
-            </StyleSidebardItems>
+                </ItemText>
+            </SidebarItem>
 
-        </StyledSidebarContainer>
+        </SidebarContainer>
     );
 };
 
