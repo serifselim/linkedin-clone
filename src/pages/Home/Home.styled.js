@@ -9,7 +9,9 @@ export const StyledHomeContainer = styled.main`
     grid-gap: 2.4rem;
 
     & > * {
-        background-color: red;
+        background-color: #fff;
+        border-radius: .8rem;
+        border: 1px solid rgba(0,0,0,0.1);
     }
 
     & > *:last-child{

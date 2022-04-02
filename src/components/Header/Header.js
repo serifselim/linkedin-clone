@@ -5,8 +5,7 @@ import { BsPeopleFill } from 'react-icons/bs';
 import { MdOutlineWork } from 'react-icons/md';
 import { RiMessage2Fill } from 'react-icons/ri';
 import { IoNotificationsSharp } from 'react-icons/io5';
-
-const IMAGE_URL = 'https://avatars.githubusercontent.com/u/70685127?v=4';
+import { IMAGE_URL } from '../../imagePaths';
 
 const Header = () => {
     return (
