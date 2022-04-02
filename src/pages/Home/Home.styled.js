@@ -29,6 +29,11 @@ export const StyledHomeContainer = styled.main`
 
     @media (max-width: 738px) {
         grid-template-columns: 1fr;
+        width: 100%;
+        
+        & > *{
+            border-radius: 0 !important;
+        } 
     }
  
 `;
@@ -40,7 +45,7 @@ export const Main = styled.section`
 
     & > hr{
         border: .1px solid #6666;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
         border-radius: 50%;
     }
 `

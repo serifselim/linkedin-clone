@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const MessageContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
     padding-bottom: 1rem;
     background-color: #fff;
-        border-radius: .8rem;
-        border: 1px solid rgba(0,0,0,0.1);
+    border-radius: .8rem;
+    border: 1px solid rgba(0,0,0,0.1);
 `;
 
 export const SendContent = styled.div`
@@ -39,6 +38,7 @@ export const MessageButton = styled.button`
 
 export const DirectsList = styled.ul`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin: 0 1.2rem;
