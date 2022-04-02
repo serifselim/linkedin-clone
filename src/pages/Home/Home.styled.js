@@ -8,12 +8,6 @@ export const StyledHomeContainer = styled.main`
     grid-template-columns: 2fr 5fr 3fr;
     grid-gap: 2.4rem;
 
-    & > * {
-        background-color: #fff;
-        border-radius: .8rem;
-        border: 1px solid rgba(0,0,0,0.1);
-    }
-
     & > *:last-child{
         @media (max-width: 768px) {
             display: none;

@@ -97,3 +97,7 @@ export const HeaderProfile = styled.img`
     height: 25px;
 `;
 
+export const Main = styled.section`
+    display: flex;
+    flex-direction: column;
+`

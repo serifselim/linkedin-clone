@@ -6,7 +6,9 @@ export const SidebarContainer = styled.section`
     flex-direction: column;
     align-items: center;
     position: relative;
-    border-radius: .8rem;
+    background-color: #fff;
+        border-radius: .8rem;
+        border: 1px solid rgba(0,0,0,0.1);
 `;
 
 export const Background = styled.img`
