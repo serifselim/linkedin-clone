@@ -9,6 +9,7 @@ export const SidebarContainer = styled.section`
     background-color: #fff;
         border-radius: .8rem;
         border: 1px solid rgba(0,0,0,0.1);
+        height: min-content;
 `;
 
 export const Background = styled.img`

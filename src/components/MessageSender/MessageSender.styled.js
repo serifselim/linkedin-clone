@@ -32,8 +32,13 @@ export const MessageButton = styled.button`
     height: 100%;
     text-align: left;
     font-weight: bold;
-    color: #5E5E5E;
+    color: gray;
     background-color: transparent;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #EBEBEB;
+    }
 `;
 
 export const DirectsList = styled.ul`
@@ -48,6 +53,12 @@ export const ListItem = styled.li`
     display: flex;
     align-items: center;
     padding: 1rem;
+    cursor: pointer;
+    border-radius: .8rem;
+
+&:hover{
+    background-color: #EBEBEB;
+}
 `;
 
 export const ItemText = styled.span`

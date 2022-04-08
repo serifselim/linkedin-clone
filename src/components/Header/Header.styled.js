@@ -68,6 +68,7 @@ export const NavList = styled.ul`
 `;
 
 export const NavListItem = styled.li`
+    cursor: pointer;
     display: flex;
     padding: 1rem;
     font-size: 1.2rem;

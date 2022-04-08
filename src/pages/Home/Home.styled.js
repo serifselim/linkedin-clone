@@ -7,7 +7,6 @@ export const StyledHomeContainer = styled.main`
     display: grid;
     grid-template-columns: 2fr 5fr 3fr;
     grid-gap: 2.4rem;
-    
     & > hr{
         display: block;
         background-color: red;
@@ -31,7 +30,7 @@ export const StyledHomeContainer = styled.main`
         grid-template-columns: 1fr;
         width: 100%;
         
-        & > *{
+        & > * {
             border-radius: 0 !important;
         } 
     }
