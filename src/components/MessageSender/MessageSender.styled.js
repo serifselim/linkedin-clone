@@ -56,9 +56,9 @@ export const ListItem = styled.li`
     cursor: pointer;
     border-radius: .8rem;
 
-&:hover{
-    background-color: #EBEBEB;
-}
+    &:hover{
+        background-color: #EBEBEB;
+    }
 `;
 
 export const ItemText = styled.span`
