@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { LoginButton } from '../../pages/Login/Login.styled';
 
 export const MessageContainer = styled.div`
     display: flex;
@@ -67,3 +68,134 @@ export const ItemText = styled.span`
     color: #5E5E5E;
     margin-left: 1.5rem;
 `;
+
+// Send Messsage
+
+export const SendMessageContainer = styled.div`
+    position: fixed;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.75);
+`;
+
+export const SendMessageContext = styled.div`
+    width: 55.2rem;
+    max-width: 55.2rem;
+    margin: 0 auto;
+    margin-top: 7rem;
+    background-color: white;
+    border-radius: 1rem;
+    max-height: calc(100vh - 160px);
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
+`;
+
+export const TopBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 2.4rem;
+
+    & > h2{
+        font-size: 2rem;
+        font-weight: 400;
+        color: gray;
+    }
+
+    & > a:hover{
+        opacity : .9;
+    }
+`;
+
+export const ProfileBox = styled.div`
+    width: 100%;
+    border-top: .1px solid rgba(0,0,0,0.2);
+`;
+
+export const ProfileContent = styled.div`
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    align-items: center;
+
+    & > img {
+        border-radius: 50%;
+        width: 4.8rem;
+        height: 4.8rem;
+        object-fit: cover;
+        margin-right: .6rem;
+    }
+`;
+
+export const ProfileDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    & > h3 {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    & > span {
+        font-size: 1.2rem;
+        font-weight: 200;
+        color: rgba(0,0,0,0.5);
+    }
+`;
+
+export const MessageBox = styled.div`
+    width: 100%;
+`
+
+export const MessageArea = styled.textarea`
+    width: 100%;
+    padding: 1.2rem 2.4rem;
+    height: 30rem;
+    font-family: sans-serif;
+    font-size: 1.6rem;
+`;
+
+export const BottomBox = styled.div`
+    width: 100%;
+    border-top: .1px solid rgba(0,0,0,0.2);
+`;
+
+export const BottomContent = styled.div`
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+
+
+    @media (max-width: 768px){
+        flex-direction: column;
+        align-items: stretch;
+    }
+`;
+
+export const ImageInput = styled.input`
+    flex: 2;
+    font-size: 1.4rem;
+    border-right: .1px solid rgba(0,0,0,0.2);
+
+    
+`;
+
+export const SendButton = styled(LoginButton)`
+    background-color: #1174B4;
+    color: white;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-left: 2rem;
+
+
+    @media (max-width: 768px){
+        flex: 1;
+        margin: 0;
+        margin-top: 1.5rem;
+    }
+`;
+

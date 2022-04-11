@@ -1,18 +1,22 @@
-import React from 'react';
-import { DirectsList, ItemText, ListItem, MessageButton, MessageContainer, Profile, SendContent } from './MessageSender.styled';
+import React, { useState } from 'react';
+import { DirectsList, ItemText, ListItem, MessageButton, MessageContainer, Profile, SendContent, SendMessageContainer } from './MessageSender.styled';
 import { IMAGE_URL } from '../../imagePaths';
 import { BsImage } from 'react-icons/bs';
 import { IoLogoYoutube } from 'react-icons/io5';
 import { BsFillCalendar2RangeFill, BsFileTextFill } from 'react-icons/bs';
+import SendMessage from './SendMessage';
 
-const MessageSender = () => {
+const MessageSender = ({ setIsOpen }) => {
+
     return (
         <MessageContainer>
             <SendContent>
                 <Profile src={IMAGE_URL} />
-                <MessageButton>
+                <MessageButton onClick={() => setIsOpen(true)}>
                     Gönderi başlat
                 </MessageButton>
+
+
             </SendContent>
             <DirectsList>
                 <ListItem>
