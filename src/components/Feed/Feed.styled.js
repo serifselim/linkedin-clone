@@ -89,6 +89,16 @@ export const FeedbackButton = styled.button`
 
     & > svg{
         margin-right: .4rem;
+
+        @media screen {
+            
+        }
+    }
+
+    & > *:not(svg) {
+        @media (max-width: 930px) {
+            display: none;
+        }
     }
 
     &:hover{
