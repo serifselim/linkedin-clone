@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoginContainer, Logo, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel } from './Login.styled'
+import { LoginContainer, Logo, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled'
 
 const Login = () => {
     const logoPath = 'https://marka-logo.com/wp-content/uploads/2020/04/Linkedin-Logo.png';
@@ -26,15 +26,22 @@ const Login = () => {
                         Profesyonel topluluğunuza hoş geldiniz!
                     </h1>
 
-                    <ActionItem>
-                        <ActionInput type="text" />
-                        <ActionLabel>E-Posta</ActionLabel>
-                    </ActionItem>
+                    <ActionsForm>
 
-                    <ActionItem>
-                        <ActionInput type="text" />
-                        <ActionLabel>Şifre</ActionLabel>
-                    </ActionItem>
+                        <ActionItem>
+                            <ActionInput type="text" />
+                            <ActionLabel>E-Posta</ActionLabel>
+                        </ActionItem>
+
+                        <ActionItem>
+                            <ActionInput type="text" />
+                            <ActionLabel>Şifre</ActionLabel>
+                        </ActionItem>
+
+                        <ActionButton>
+                            Oturum Aç
+                        </ActionButton>
+                    </ActionsForm>
 
                 </LoginActions>
             </LoginContent>

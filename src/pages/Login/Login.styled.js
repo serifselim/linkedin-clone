@@ -10,6 +10,9 @@ export const LoginContent = styled.section`
     width: 100%;
     max-width: 1128px;
     margin: 0 auto;
+    padding-left: 2rem;
+        padding-right: 2rem;
+
 `;
 
 export const Header = styled.header`
@@ -33,7 +36,13 @@ export const Actions = styled.ul`
         font-size: 1.6rem;
         font-weight: 600;
         background: none;
+
+        @media (max-width: 768px){
+            font-size: 1.2rem;
+        }
     }
+
+
 `;
 
 export const RegisterButton = styled.button`
@@ -53,17 +62,24 @@ export const LoginButton = styled.button`
 export const LoginActions = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin-top: 4.2rem;
     width: 55%;
-    max-width: 50rem;
+    max-width: 40rem;
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
 
     & > h1 {
         font-size: 5.6rem;
         font-weight: 100;
         color: #8F5849;
         margin-bottom: 2rem;
+
+        @media (max-width: 768px) {
+            font-size: 3rem;
+        }
     }
 `;
 
@@ -93,10 +109,13 @@ export const ActionItem = styled.div`
         height: 100%;
         top: 0;
         left: 0;
-        padding: 12px;
         transition: all .2s ease-in-out;
         pointer-events: none;
     }
+`;
+
+export const ActionsForm = styled.form`
+
 `;
 
 export const ActionInput = styled.input`
@@ -113,7 +132,7 @@ export const ActionInput = styled.input`
     outline: none;
 `;
 
-export const ActionLabel = styled.input`
+export const ActionLabel = styled.label`
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: 400;
@@ -127,4 +146,21 @@ export const ActionLabel = styled.input`
     padding: 12px;
     transition: all .2s ease-in-out;
     pointer-events: none;
+`;
+
+export const ActionButton = styled.button`
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 3rem;
+    padding: 1.6rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+    background: #1174B4;
+    color: white;
+    margin-top: 2rem;
+
+    &:hover{
+        background: #006097;
+    }
 `;
