@@ -11,7 +11,7 @@ const SendMessage = ({ setIsOpen }) => {
                     <h2>
                         Gönderi Oluşturun
                     </h2>
-                    <a href="#" onClick={() => setIsOpen(false)}>
+                    <a href="/#" onClick={() => setIsOpen(false)}>
                         <ImCancelCircle size={25} color="gray" />
                     </a>
                 </TopBox>
