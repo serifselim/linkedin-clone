@@ -35,7 +35,7 @@ const Register = () => {
                         </ActionItem>
 
                         <ActionItem>
-                            <ActionInput type="text" required />
+                            <ActionInput type="password" required />
                             <ActionLabel>Şifre</ActionLabel>
                         </ActionItem>
 

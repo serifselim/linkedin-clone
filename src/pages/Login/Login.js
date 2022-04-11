@@ -34,7 +34,7 @@ const Login = () => {
                         </ActionItem>
 
                         <ActionItem>
-                            <ActionInput type="text" />
+                            <ActionInput type="password" />
                             <ActionLabel>Şifre</ActionLabel>
                         </ActionItem>
 
