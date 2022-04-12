@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useStateValue } from '../../context/Provider'
 import { LOGO_URL } from '../../imagePaths'
-import { LoginContainer, Logo, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled'
+import { LoginContainer, Logo, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
+import { actionTypes } from '../../context/reducer';
 
 const Login = () => {
+
+    const { state, dispatch } = useStateValue();
+
+    useEffect(() => {
+        console.log(state);
+    }, []);
 
     return (
         <LoginContainer>
@@ -38,7 +46,12 @@ const Login = () => {
                             <ActionLabel>Şifre</ActionLabel>
                         </ActionItem>
 
-                        <ActionButton>
+                        <ActionButton onClick={(e) => {
+                            e.preventDefault();
+                            dispatch({
+                                type: actionTypes.SET_USER
+                            });
+                        }}>
                             Oturum Aç
                         </ActionButton>
                     </ActionsForm>
