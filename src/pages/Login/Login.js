@@ -3,6 +3,7 @@ import { useStateValue } from '../../context/Provider'
 import { LOGO_URL } from '../../imagePaths'
 import { LoginContainer, Logo, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
 import { actionTypes } from '../../context/reducer';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -20,9 +21,11 @@ const Login = () => {
                     <Logo src={LOGO_URL} />
 
                     <Actions>
-                        <RegisterButton>
-                            Hemen Katıl
-                        </RegisterButton>
+                        <Link to='/register'>
+                            <RegisterButton>
+                                Hemen Katıl
+                            </RegisterButton>
+                        </Link>
                         <LoginButton>
                             Oturum aç
                         </LoginButton>

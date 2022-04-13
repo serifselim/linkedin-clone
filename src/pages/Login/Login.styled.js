@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const LoginContainer = styled.main`
@@ -40,6 +41,13 @@ export const Actions = styled.ul`
         @media (max-width: 768px){
             font-size: 1.2rem;
         }
+    }
+
+    & > a {
+        border: none;
+        padding: 0 1.2rem;
+        margin-right: 1.2rem;
+        color: gray;
     }
 
 
