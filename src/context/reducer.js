@@ -1,18 +1,20 @@
+import { createUser } from './utils';
+
 export const initialState = {
-    user: null
+    currentUser: null,
+    usersList: []
 };
 
 export const actionTypes = {
-    SET_USER: 'SET_USER'
+    SET_USER: 'SET_USER',
+    CREATE_USER: 'CREATE_USER'
 };
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case actionTypes.SET_USER:
-            return {
-                ...state,
-                user: 'yavuz'
-            }
+        case actionTypes.CREATE_USER:
+            createUser(state, action.user);
+            return { ...state };
         default:
             return state;
     };

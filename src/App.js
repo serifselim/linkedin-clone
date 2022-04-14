@@ -11,9 +11,8 @@ const App = () => {
     <>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={state.user ? <Home /> : <Login />} />
+        <Route path="/" element={state.currentUser ? <Home /> : <Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="/login" element={<Login />} /> */}
       </Routes>
     </>
   )

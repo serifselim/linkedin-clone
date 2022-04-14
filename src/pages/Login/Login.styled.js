@@ -42,15 +42,6 @@ export const Actions = styled.ul`
             font-size: 1.2rem;
         }
     }
-
-    & > a {
-        border: none;
-        padding: 0 1.2rem;
-        margin-right: 1.2rem;
-        color: gray;
-    }
-
-
 `;
 
 export const RegisterButton = styled.button`
@@ -58,6 +49,13 @@ export const RegisterButton = styled.button`
     padding: 0 1.2rem;
     margin-right: 1.2rem;
     color: gray;
+    background: none;
+    font-weight: 600;
+    font-size: 1.6rem;
+
+    &:hover{
+        opacity: .8;
+    }
 `;
 
 export const LoginButton = styled.button`
@@ -95,7 +93,7 @@ export const ActionItem = styled.div`
     position: relative;
     width: 100%;
     margin-top: 1.2rem;
-
+/* 
     & > input:focus ~ label{
         font-size: 1.2rem;
         line-height: 1.33333;
@@ -104,14 +102,15 @@ export const ActionItem = styled.div`
         padding-top: 6px;
         -webkit-transition-delay: 0s;
         transition-delay: 0s;
-    }
+    } */
 
     & > label {
-        font-size: 1.6rem;
-        line-height: 1.5;
+        font-size: ${({ active }) => active ? '1.2rem' : '1.6rem'};
+        line-height: ${({ active }) => active ? '1.33333' : '1.5'};
         font-weight: 400;
         color: rgba(0,0,0,0.6);
         position: absolute;
+        padding-top: ${({ active }) => active ? '.6rem' : '1.3rem'};
         background-color: transparent;
         width: 100%;
         height: 100%;
