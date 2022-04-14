@@ -1,4 +1,13 @@
-export const createUser = (state, newUser) => {
-    state.usersList.push(newUser);
-    localStorage.setItem('usersList', JSON.stringify(state.usersList));
-};
+const getData = (dataName) => {
+    const data = JSON.parse(localStorage.getItem(dataName));
+    return data;
+}
+
+const setData = (dataName, dataFile) => {
+    localStorage.setItem(dataName, JSON.stringify(dataFile));
+}
+
+export {
+    getData,
+    setData
+}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent } from './Register.styled';
 import { Logo, ActionsForm, ActionInput, ActionLabel, ActionItem, ActionButton } from '../Login/Login.styled';
-import { LOGO_URL } from '../../imagePaths';
+import { DEFAULT_PROFİLE, LOGO_URL } from '../../imagePaths';
 import { useStateValue } from '../../context/Provider';
 import { actionTypes } from '../../context/reducer';
 import { useNavigate } from 'react-router-dom';
@@ -14,8 +14,8 @@ const Register = () => {
 
     const [userName, setUserName] = useState('');
     const [job, setJob] = useState('');
-    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [profilePic, setProfilePic] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,8 +23,8 @@ const Register = () => {
         const newUserObj = {
             userName,
             job,
-            email,
             password,
+            profilePic: profilePic ? profilePic : DEFAULT_PROFİLE,
             userId: uuidv4()
         }
 
@@ -46,7 +46,19 @@ const Register = () => {
                         Profesyonel hayatınızdan en iyi şekilde yararlanın
                     </h1>
 
+                    <img src={profilePic ? profilePic : DEFAULT_PROFİLE} alt='avatar' />
+
                     <ActionsForm onSubmit={handleSubmit}>
+                        <ActionItem active={profilePic}>
+                            <ActionInput
+                                type='url'
+                                value={profilePic}
+                                onChange={(e) => setProfilePic(e.target.value)}
+                            />
+
+                            <ActionLabel>Profil Resmi (URL)</ActionLabel>
+                        </ActionItem>
+
                         <ActionItem active={userName}>
                             <ActionInput
                                 required
@@ -64,16 +76,6 @@ const Register = () => {
                                 onChange={(e) => setJob(e.target.value)}
                             />
                             <ActionLabel>Meslek</ActionLabel>
-                        </ActionItem>
-
-                        <ActionItem active={email}>
-                            <ActionInput
-                                required
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <ActionLabel>E-Posta</ActionLabel>
                         </ActionItem>
 
                         <ActionItem active={password}>
