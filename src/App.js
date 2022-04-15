@@ -13,7 +13,7 @@ const App = () => {
     const usersList = getData('usersList');
     const currentUser = getData('currentUser');
 
-    if (usersList) dispatch({ type: actionTypes.GET_USER, user: usersList });
+    if (usersList) dispatch({ type: actionTypes.GET_ALL_USERS, users: usersList });
     if (currentUser) {
       dispatch({ type: actionTypes.GET_USER, user: currentUser });
       console.log(currentUser)

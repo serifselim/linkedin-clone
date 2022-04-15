@@ -1,9 +1,13 @@
 import React from 'react';
 import { ProfileBox, ProfileContent, SendMessageContainer, SendMessageContext, TopBox, ProfileDetails, MessageBox, MessageArea, BottomBox, BottomContent, ImageInput, SendButton } from './MessageSender.styled';
 import { ImCancelCircle } from 'react-icons/im';
-import { IMAGE_URL } from '../../imagePaths';
+import { useStateValue } from '../../context/Provider';
 
 const SendMessage = ({ setIsOpen }) => {
+
+    const { state, dispatch } = useStateValue();
+    const { currentUser } = state;
+
     return (
         <SendMessageContainer>
             <SendMessageContext>
@@ -18,14 +22,14 @@ const SendMessage = ({ setIsOpen }) => {
 
                 <ProfileBox>
                     <ProfileContent>
-                        <img src={IMAGE_URL} alt="profile" />
+                        <img src={currentUser.profilePic} alt="profile" />
 
                         <ProfileDetails>
                             <h3>
-                                Yavuz Selim Şerifoğlu
+                                {currentUser.userName}
                             </h3>
                             <span>
-                                Frontend Developer
+                                {currentUser.job}
                             </span>
                         </ProfileDetails>
                     </ProfileContent>

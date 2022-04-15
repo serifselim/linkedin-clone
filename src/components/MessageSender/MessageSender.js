@@ -5,13 +5,17 @@ import { BsImage } from 'react-icons/bs';
 import { IoLogoYoutube } from 'react-icons/io5';
 import { BsFillCalendar2RangeFill, BsFileTextFill } from 'react-icons/bs';
 import SendMessage from './SendMessage';
+import { useStateValue } from '../../context/Provider';
 
 const MessageSender = ({ setIsOpen }) => {
+
+    const { state, dispatch } = useStateValue();
+    const { currentUser } = state;
 
     return (
         <MessageContainer>
             <SendContent>
-                <Profile src={IMAGE_URL} />
+                <Profile src={currentUser.profilePic} />
                 <MessageButton onClick={() => setIsOpen(true)}>
                     Gönderi başlat
                 </MessageButton>

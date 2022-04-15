@@ -1,20 +1,25 @@
 import React from 'react';
 import { Background, ProfileImage, SidebarItem, SidebarContainer, SidebarProfile, SidebarViewers, ProfileMajor, ProfileTitle, ViewerContent, ViewerTitle, ViewerValue, ItemIcon, ItemText } from './Sidebar.styled';
 import { IMAGE_URL, BACKGROUND_URL } from '../../imagePaths';
+import { useStateValue } from '../../context/Provider';
 
 
 const Sidebar = () => {
+
+    const { state, dispatch } = useStateValue();
+    const { currentUser } = state;
+
     return (
         <SidebarContainer>
             <Background src={BACKGROUND_URL} />
 
             <SidebarProfile>
-                <ProfileImage src={IMAGE_URL} />
+                <ProfileImage src={currentUser.profilePic} />
                 <ProfileTitle>
-                    Yavuz Selim Şerifoğlu
+                    {currentUser.userName}
                 </ProfileTitle>
                 <ProfileMajor>
-                    Frontend Developer
+                    {currentUser.job}
                 </ProfileMajor>
             </SidebarProfile>
 

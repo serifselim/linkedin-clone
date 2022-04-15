@@ -5,9 +5,13 @@ import { BsPeopleFill } from 'react-icons/bs';
 import { MdOutlineWork } from 'react-icons/md';
 import { RiMessage2Fill } from 'react-icons/ri';
 import { IoNotificationsSharp } from 'react-icons/io5';
-import { IMAGE_URL } from '../../imagePaths';
+import { useStateValue } from '../../context/Provider';
 
 const Header = () => {
+
+    const { state, dispatch } = useStateValue();
+    const { currentUser } = state;
+
     return (
         <HeaderContainer>
             <HeaderContent>
@@ -40,7 +44,7 @@ const Header = () => {
                             <span>Bildirimler</span>
                         </NavListItem>
                         <NavListItem>
-                            <HeaderProfile src={IMAGE_URL} alt="profile" />
+                            <HeaderProfile src={currentUser.profilePic} alt="profile" />
                             <span>Ben</span>
                         </NavListItem>
                     </NavList>

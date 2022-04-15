@@ -9,7 +9,8 @@ export const actionTypes = {
     SET_USER: 'SET_USER',
     CREATE_USER: 'CREATE_USER',
     LOGIN_USER: 'LOGIN_USER',
-    GET_USER: 'GET_USER'
+    GET_USER: 'GET_USER',
+    GET_ALL_USERS: 'GET_ALL_USERS'
 };
 
 const reducer = (state, action) => {
@@ -23,6 +24,11 @@ const reducer = (state, action) => {
             setData('currentUser', state.currentUser);
             return {
                 ...state,
+            }
+        case actionTypes.GET_ALL_USERS:
+            return {
+                ...state,
+                usersList: action.users
             }
         case actionTypes.GET_USER:
             return {

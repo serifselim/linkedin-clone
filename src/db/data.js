@@ -14,4 +14,8 @@ export const FlowChartData = [
         major: 'Stil * Arayüz',
         image: 'https://styled-components.com/atom.png'
     },
-]
+];
+
+// export const headerItemsData = [
+
+// ]
