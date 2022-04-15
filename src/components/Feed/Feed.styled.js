@@ -51,13 +51,14 @@ export const DateTime = styled(UserMajor)`
 export const ContentsBox = styled.div`
     display: flex;
     flex-direction: column;
-`
+    width: 50%;
+    height: auto;
+`;
 
 export const ContentText = styled.p`
     font-size: 1.4rem;
     margin: 0 1.6rem;
     line-height: 1.6;
-
 `;
 
 export const ContentImage = styled.img`
