@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useStateValue } from '../../context/Provider'
-import { LOGO_URL } from '../../imagePaths'
-import { LoginContainer, Logo, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
+import { LOGIN_BACKGROUND, LOGO_URL } from '../../imagePaths'
+import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton, HeaderContainer } from './Login.styled';
 import { actionTypes } from '../../context/reducer';
 import { Link } from 'react-router-dom';
 
@@ -48,39 +48,45 @@ const Login = () => {
                         </LoginButton>
                     </Actions>
                 </Header>
-                <LoginActions>
 
-                    <h1>
-                        Profesyonel topluluğunuza hoş geldiniz!
-                    </h1>
+                <MainContainer>
 
-                    <ActionsForm onSubmit={handleSubmit}>
+                    <LoginActions>
 
-                        <ActionItem>
-                            <ActionInput
-                                value={userName}
-                                onChange={(e) => setUserName(e.target.value)}
-                                required
-                            />
-                            <ActionLabel>Kullanıcı Adı</ActionLabel>
-                        </ActionItem>
+                        <h1>
+                            Profesyonel topluluğunuza hoş geldiniz!
+                        </h1>
 
-                        <ActionItem>
-                            <ActionInput
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            <ActionLabel>Şifre</ActionLabel>
-                        </ActionItem>
+                        <ActionsForm onSubmit={handleSubmit}>
 
-                        <ActionButton>
-                            Oturum Aç
-                        </ActionButton>
-                    </ActionsForm>
+                            <ActionItem active={userName}>
+                                <ActionInput
+                                    value={userName}
+                                    onChange={(e) => setUserName(e.target.value)}
+                                    required
+                                />
+                                <ActionLabel>Kullanıcı Adı</ActionLabel>
+                            </ActionItem>
 
-                </LoginActions>
+                            <ActionItem active={password}>
+                                <ActionInput
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                                <ActionLabel>Şifre</ActionLabel>
+                            </ActionItem>
+
+                            <ActionButton>
+                                Oturum Aç
+                            </ActionButton>
+                        </ActionsForm>
+
+                    </LoginActions>
+
+                    <BackgroundImg src={LOGIN_BACKGROUND} />
+                </MainContainer>
             </LoginContent>
         </LoginContainer>
     )

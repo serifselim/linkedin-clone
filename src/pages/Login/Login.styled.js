@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const LoginContainer = styled.main`
     width: 100%;
     height: 100vh;
-    background: white;
+    background: #FDFDFD;
 `;
 
 export const LoginContent = styled.section`
@@ -12,8 +12,24 @@ export const LoginContent = styled.section`
     max-width: 1128px;
     margin: 0 auto;
     padding-left: 2rem;
-        padding-right: 2rem;
+    padding-right: 2rem;
+`;
 
+export const MainContainer = styled.section`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+`;
+
+export const BackgroundImg = styled.img`
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 400px;
 `;
 
 export const Header = styled.header`
@@ -54,7 +70,7 @@ export const RegisterButton = styled.button`
     font-size: 1.6rem;
 
     &:hover{
-        opacity: .8;
+        color: black;
     }
 `;
 
