@@ -14,7 +14,11 @@ const App = () => {
     const currentUser = getData('currentUser');
 
     if (usersList) dispatch({ type: actionTypes.GET_USER, user: usersList });
-    if (currentUser) dispatch({ type: actionTypes.GET_USER, user: usersList });
+    if (currentUser) {
+      dispatch({ type: actionTypes.GET_USER, user: currentUser });
+      console.log(currentUser)
+      console.log('current user geldi');
+    };
 
   }, [])
 

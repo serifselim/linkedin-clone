@@ -27,7 +27,7 @@ const reducer = (state, action) => {
         case actionTypes.GET_USER:
             return {
                 ...state,
-                usersList: action.user
+                currentUser: action.user
             }
         default:
             return state;
@@ -35,15 +35,3 @@ const reducer = (state, action) => {
 };
 
 export default reducer;
-
-// for (let i = 0; i < state.usersList.length; i++) {
-//     const user = state.usersList[i];
-//     if (user.password === action.user.password && user.userName === action.user.userName) {
-//         return {
-//             ...state,
-//             currentUser: user
-//         }
-//     } else {
-//         alert('Kullanıcı adını ya da parolayı yanlış girdiniz !');
-//     }
-// }
