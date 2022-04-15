@@ -15,6 +15,10 @@ export const HeaderContent = styled.div`
     max-width: 1183px;
     min-height: 100%;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        width: 95%;
+    }
 `;
 
 export const Logo = styled(BsLinkedin)`
@@ -52,10 +56,7 @@ export const SearchIcon = styled(BiSearchAlt2)`
     transform: translateY(-50%);
 
     @media (max-width: 768px) {
-            position: relative;
-            top: 0;
-            left: 0;
-            transform: none;
+            display: none;
     }    
 `
 

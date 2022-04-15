@@ -3,14 +3,20 @@ import { Logo, SearchIcon, SearchInput, SearchBox, HeaderContainer, HeaderConten
 import { ImHome } from 'react-icons/im';
 import { BsPeopleFill } from 'react-icons/bs';
 import { MdOutlineWork } from 'react-icons/md';
-import { RiMessage2Fill } from 'react-icons/ri';
+import { RiMessage2Fill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { IoNotificationsSharp } from 'react-icons/io5';
 import { useStateValue } from '../../context/Provider';
+import { actionTypes } from '../../context/reducer';
 
 const Header = () => {
 
     const { state, dispatch } = useStateValue();
     const { currentUser } = state;
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        dispatch({ type: actionTypes.CLEAR_USER })
+    }
 
     return (
         <HeaderContainer>
@@ -46,6 +52,10 @@ const Header = () => {
                         <NavListItem>
                             <HeaderProfile src={currentUser.profilePic} alt="profile" />
                             <span>Ben</span>
+                        </NavListItem>
+                        <NavListItem onClick={handleClick}>
+                            <RiLogoutCircleRFill size={25} />
+                            <span>Çıkış Yap</span>
                         </NavListItem>
                     </NavList>
                 </HeaderNav>

@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ProfileBox, ProfileContent, SendMessageContainer, SendMessageContext, TopBox, ProfileDetails, MessageBox, MessageArea, BottomBox, BottomContent, ImageInput, SendButton } from './MessageSender.styled';
 import { ImCancelCircle } from 'react-icons/im';
 import { useStateValue } from '../../context/Provider';
+import { actionTypes } from '../../context/reducer';
 
 const SendMessage = ({ setIsOpen }) => {
 
     const { state, dispatch } = useStateValue();
     const { currentUser } = state;
+
+    const [postMessage, setPostMessage] = useState('');
+    const [postImageURL, setPostImageURL] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const post = {
+            postOwner: currentUser,
+            postMessage,
+            postImageURL
+        };
+
+        dispatch({ type: actionTypes.SET_POST_ITEM, post })
+
+        setIsOpen(false);
+    }
 
     return (
         <SendMessageContainer>
@@ -35,15 +53,15 @@ const SendMessage = ({ setIsOpen }) => {
                     </ProfileContent>
                 </ProfileBox>
 
-                <form onSubmit={() => setIsOpen(false)}>
+                <form onSubmit={handleSubmit}>
                     <MessageBox>
-                        <MessageArea type="textarea" placeholder='Ne hakkında konuşmak istiyorsunuz?' />
+                        <MessageArea value={postMessage} onChange={(e) => setPostMessage(e.target.value)} type="textarea" required placeholder='Ne hakkında konuşmak istiyorsunuz?' />
                     </MessageBox>
 
                     <BottomBox>
                         <BottomContent>
-                            <ImageInput type='text' placeholder='Resim ekle (URL)' />
-                            <SendButton type="submit">
+                            <ImageInput value={postImageURL} onChange={(e) => setPostImageURL(e.target.value)} type='url' placeholder='Resim ekle (URL)' />
+                            <SendButton>
                                 Yayınla
                             </SendButton>
                         </BottomContent>

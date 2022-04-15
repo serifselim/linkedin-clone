@@ -6,22 +6,22 @@ import { useStateValue } from '../../context/Provider';
 
 const Feed = () => {
 
+    const { state, dispatch } = useStateValue();
+    const { postsList, currentUser } = state;
+
     return (
         <FeedContainer>
             <FeedList>
-                <FeedItem
-                    profileURL={''}
-                    name="Yavuz Selim Şerifoğlu"
-                    major="Example user title"
-                    lastDate="2 gün önce"
-                    postImageURL={BACKGROUND_URL}
-                />,
-                <FeedItem
-                    profileURL={''}
-                    name="Yavuz Selim Şerifoğlu"
-                    major="Example user title"
-                    lastDate="2 gün önce"
-                />
+                {postsList && postsList.map(item => (
+                    <FeedItem
+                        profileURL={item.postOwner.profilePic}
+                        name={item.postOwner.userName}
+                        job={item.postOwner.job}
+                        lastDate="Az önce"
+                        postMessage={item.postMessage}
+                        postImageURL={item.postImageURL}
+                    />
+                ))}
             </FeedList>
         </FeedContainer>
     );

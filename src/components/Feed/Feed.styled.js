@@ -7,13 +7,14 @@ export const FeedContainer = styled.section`
 
 export const FeedList = styled.ul`
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 `;
 
 export const ListItem = styled.li`
     background-color: #fff;
     border-radius: .8rem;
     border: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
 `;
 
 export const ProfileBox = styled.div`

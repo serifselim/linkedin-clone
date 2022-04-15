@@ -12,13 +12,17 @@ const App = () => {
   useEffect(() => {
     const usersList = getData('usersList');
     const currentUser = getData('currentUser');
+    const postsList = getData('postsList');
 
-    if (usersList) dispatch({ type: actionTypes.GET_ALL_USERS, users: usersList });
+    if (usersList) {
+      dispatch({ type: actionTypes.GET_ALL_USERS, users: usersList });
+    };
     if (currentUser) {
       dispatch({ type: actionTypes.GET_USER, user: currentUser });
-      console.log(currentUser)
-      console.log('current user geldi');
     };
+    if (postsList) {
+      dispatch({ type: actionTypes.GET_POSTS, postsList });
+    }
 
   }, [])
 
