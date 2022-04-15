@@ -19,3 +19,15 @@ export const FlowChartData = [
 // export const headerItemsData = [
 
 // ]
+
+export const FakePostsList = [
+    {
+        profileURL: 'https://avatars.githubusercontent.com/u/70685127?v=4',
+        name: 'Yavuz Selim Şerifoğlu',
+        job: 'Frontend Developer',
+        lastDate: '2 gün önce',
+        postMessage: 'Merhabalar, sizlere #frontend alanında kendimi geliştirmek adına yapmış olduğum, yazı yazma pratiğinizi geliştirmeyi amaçlayan bir oyunu tanıtmak isterim',
+        postImageURL: 'https://media-exp1.licdn.com/dms/image/C4D22AQE1L9RcpjVyuQ/feedshare-shrink_2048_1536/0/1642767812498?e=2147483647&v=beta&t=iJAqyxudyvbLTFgXbEPwaOV5uyEht69rWpbccZvTc-Y'
+
+    }
+]

@@ -56,7 +56,7 @@ const Register = () => {
                                 onChange={(e) => setProfilePic(e.target.value)}
                             />
 
-                            <ActionLabel>Profil Resmi (URL)</ActionLabel>
+                            <ActionLabel>Profil URL (Zorunlu Değil)</ActionLabel>
                         </ActionItem>
 
                         <ActionItem active={userName}>
