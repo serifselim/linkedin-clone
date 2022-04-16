@@ -28,7 +28,6 @@ export const FlowChartItem = styled.li`
         width: 4.8rem;
         height: 4.8rem;
         border-radius: 50%;
-        object-fit: cover;
         margin-right: 1.6rem;
     }
 

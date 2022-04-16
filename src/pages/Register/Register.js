@@ -16,6 +16,7 @@ const Register = () => {
     const [job, setJob] = useState('');
     const [password, setPassword] = useState('');
     const [profilePic, setProfilePic] = useState('');
+    const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +25,7 @@ const Register = () => {
             userName,
             job,
             password,
+            email,
             profilePic: profilePic ? profilePic : DEFAULT_PROFİLE,
             userId: uuidv4()
         }
@@ -57,6 +59,16 @@ const Register = () => {
                             />
 
                             <ActionLabel>Profil URL (Zorunlu Değil)</ActionLabel>
+                        </ActionItem>
+
+                        <ActionItem active={email}>
+                            <ActionInput
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+
+                            <ActionLabel>E-mail</ActionLabel>
                         </ActionItem>
 
                         <ActionItem active={userName}>

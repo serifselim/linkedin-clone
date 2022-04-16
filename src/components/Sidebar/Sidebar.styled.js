@@ -20,7 +20,6 @@ export const Background = styled.img`
     border-top-right-radius: .8rem;
     height: 5.6rem;
     width: 100%;
-    object-fit: cover;
 `;
 
 export const SidebarProfile = styled.div`

@@ -27,7 +27,6 @@ export const MainContainer = styled.section`
 `;
 
 export const BackgroundImg = styled.img`
-    object-fit: cover;
     max-width: 100%;
     max-height: 400px;
 `;

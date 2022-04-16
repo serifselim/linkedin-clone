@@ -6,14 +6,14 @@ import { RiShareForwardLine } from 'react-icons/ri';
 import { RiSendPlaneFill } from 'react-icons/ri';
 
 
-const FeedItem = ({ profileURL, name, job, lastDate, postMessage, postImageURL }) => {
+const FeedItem = ({ profileURL, name, job, lastDate, socialMediaLink, postMessage, postImageURL }) => {
     return (
         <ListItem>
             <ProfileBox>
                 <UserImage src={profileURL} />
                 <UserDetails>
                     <UserName>
-                        {name}
+                        {socialMediaLink ? <a href={socialMediaLink}>{name}</a> : name}
                     </UserName>
                     <UserMajor>
                         {job}

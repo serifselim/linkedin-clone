@@ -51,10 +51,18 @@ export const DateTime = styled(UserMajor)`
 export const ContentsBox = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 56rem;
+    max-width: 58rem;
+
+    @media (max-width: 900px){
+        max-width: 45rem;
+    }
 
     @media (max-width: 568px) {
-        max-width: 38rem;
+        max-width: 42rem;
+    }
+    
+    @media (max-width: 400px) {
+        max-width: 39rem;
     }
 `;
 
@@ -63,6 +71,7 @@ export const ContentText = styled.p`
     margin: 0 1.6rem;
     line-height: 1.6;
     word-wrap: break-word;
+    white-space: pre-line;
 `;
 
 export const ContentImage = styled.img`
@@ -70,7 +79,6 @@ export const ContentImage = styled.img`
     max-height: 60rem;
     margin-top: .8rem;
     margin-bottom: 2.4rem;
-    object-fit: cover;
 `;
 
 export const FeedbacksBox = styled.div`

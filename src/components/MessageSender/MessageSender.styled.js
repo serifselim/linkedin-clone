@@ -126,7 +126,6 @@ export const ProfileContent = styled.div`
         border-radius: 50%;
         width: 4.8rem;
         height: 4.8rem;
-        object-fit: cover;
         margin-right: .6rem;
     }
 `;

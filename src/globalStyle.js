@@ -24,8 +24,13 @@ const GlobalStyle = createGlobalStyle`
          cursor: pointer;
      }
 
+     img{
+         object-fit: cover;
+     }
+
      a{
          text-decoration: none;
+         color: black;
     }
     
     input,textarea{

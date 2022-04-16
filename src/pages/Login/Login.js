@@ -10,17 +10,18 @@ const Login = () => {
     const { state, dispatch } = useStateValue();
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const { usersList } = state;
 
         const queryUser = {
-            userName,
+            email,
             password
         }
 
-        const currentUser = usersList.filter((user) => user.userName === queryUser.userName && user.password === queryUser.password);
+        const currentUser = usersList.filter((user) => user.email === queryUser.email && user.password === queryUser.password);
 
         if (currentUser.length > 0) {
             dispatch({ type: actionTypes.LOGIN_USER, user: currentUser[0] });
@@ -59,13 +60,13 @@ const Login = () => {
 
                         <ActionsForm onSubmit={handleSubmit}>
 
-                            <ActionItem active={userName}>
+                            <ActionItem active={email}>
                                 <ActionInput
-                                    value={userName}
-                                    onChange={(e) => setUserName(e.target.value)}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
-                                <ActionLabel>Kullanıcı Adı</ActionLabel>
+                                <ActionLabel>E-mail</ActionLabel>
                             </ActionItem>
 
                             <ActionItem active={password}>

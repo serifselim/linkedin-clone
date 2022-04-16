@@ -24,7 +24,6 @@ width: 100%;
         border-radius: 50%;
         width: 15rem;
         height: 15rem;
-        object-fit: cover;
         margin: 0 auto;
         }
 `;

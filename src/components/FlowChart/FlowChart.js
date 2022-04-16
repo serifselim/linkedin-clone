@@ -9,8 +9,9 @@ const FlowChart = () => {
             <h1>Akışınıza ekleyin</h1>
             <FlowChartList>
                 {
-                    FlowChartData.map(({ title, major, image }) => (
+                    FlowChartData.map(({ title, major, image }, index) => (
                         <FlowChartListItem
+                            key={index}
                             title={title}
                             major={major}
                             image={image}

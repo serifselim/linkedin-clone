@@ -3,6 +3,7 @@ import { FeedContainer, FeedList } from './Feed.styled';
 import FeedItem from './FeedItem';
 import { BACKGROUND_URL } from '../../imagePaths';
 import { useStateValue } from '../../context/Provider';
+import { fakePostsList } from '../../db/data';
 
 const Feed = () => {
 
@@ -12,14 +13,28 @@ const Feed = () => {
     return (
         <FeedContainer>
             <FeedList>
-                {postsList && postsList.map(item => (
+                {fakePostsList.map((post, index) => (
                     <FeedItem
-                        profileURL={item.postOwner.profilePic}
-                        name={item.postOwner.userName}
-                        job={item.postOwner.job}
+                        key={index}
+                        profileURL={post.profilePic}
+                        name={post.userName}
+                        job={post.job}
+                        lastDate={post.lastDate}
+                        postMessage={post.postMessage}
+                        postImageURL={post.postImageURL}
+                        socialMediaLink={post.socialMediaLink}
+                    />
+                ))}
+
+                {postsList && postsList.map((post, index) => (
+                    <FeedItem
+                        key={index}
+                        profileURL={post.postOwner.profilePic}
+                        name={post.postOwner.userName}
+                        job={post.postOwner.job}
                         lastDate="Az önce"
-                        postMessage={item.postMessage}
-                        postImageURL={item.postImageURL}
+                        postMessage={post.postMessage}
+                        postImageURL={post.postImageURL}
                     />
                 ))}
             </FeedList>
