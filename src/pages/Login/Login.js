@@ -26,7 +26,7 @@ const Login = () => {
         if (currentUser.length > 0) {
             dispatch({ type: actionTypes.LOGIN_USER, user: currentUser[0] });
         } else {
-            alert('Kullanıcı adını ya da parolayı yanlış girdiniz !');
+            alert('E-postayı ya da parolayı yanlış girdiniz !');
         }
 
     };
