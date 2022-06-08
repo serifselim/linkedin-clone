@@ -1,12 +1,12 @@
 import React from 'react';
 import { Background, ProfileImage, SidebarItem, SidebarContainer, SidebarProfile, SidebarViewers, ProfileMajor, ProfileTitle, ViewerContent, ViewerTitle, ViewerValue, ItemIcon, ItemText } from './Sidebar.styled';
-import { IMAGE_URL, BACKGROUND_URL } from '../../imagePaths';
+import { BACKGROUND_URL } from '../../imagePaths';
 import { useStateValue } from '../../context/Provider';
 
 
 const Sidebar = () => {
 
-    const { state, dispatch } = useStateValue();
+    const { state } = useStateValue();
     const { currentUser } = state;
 
     return (

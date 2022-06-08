@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useStateValue } from '../../context/Provider'
-import { LOGIN_BACKGROUND, LOGO_URL } from '../../imagePaths'
-import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton, HeaderContainer } from './Login.styled';
+import React, { useState } from 'react';
+import { useStateValue } from '../../context/Provider';
+import { LOGIN_BACKGROUND, LOGO_URL } from '../../imagePaths';
+import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
 import { actionTypes } from '../../context/reducer';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
 
     const { state, dispatch } = useStateValue();
-    const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
@@ -19,7 +18,7 @@ const Login = () => {
         const queryUser = {
             email,
             password
-        }
+        };
 
         const currentUser = usersList.filter((user) => user.email === queryUser.email && user.password === queryUser.password);
 
@@ -90,7 +89,7 @@ const Login = () => {
                 </MainContainer>
             </LoginContent>
         </LoginContainer>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;

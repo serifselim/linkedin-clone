@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { Home, Login, Register } from "./pages";
@@ -24,7 +25,7 @@ const App = () => {
       dispatch({ type: actionTypes.GET_POSTS, postsList });
     }
 
-  }, [])
+  }, []);
 
   return (
     <>
@@ -34,7 +35,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
       </Routes>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

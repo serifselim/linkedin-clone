@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { ProfileImage, ProfileMajor, ProfileTitle } from '../Sidebar/Sidebar.styled';
+import styled from 'styled-components';
+import { ProfileImage, ProfileMajor } from '../Sidebar/Sidebar.styled';
 
 export const FeedContainer = styled.section`
 
@@ -33,7 +33,7 @@ export const UserImage = styled(ProfileImage)`
 export const UserDetails = styled.div`
     display: flex;
     flex-direction: column;
-`
+`;
 
 export const UserName = styled.span`
     font-size: 1.4rem;

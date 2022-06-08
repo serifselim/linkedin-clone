@@ -1,14 +1,13 @@
 import React from 'react';
 import { FeedContainer, FeedList } from './Feed.styled';
 import FeedItem from './FeedItem';
-import { BACKGROUND_URL } from '../../imagePaths';
 import { useStateValue } from '../../context/Provider';
 import { fakePostsList } from '../../db/data';
 
 const Feed = () => {
 
-    const { state, dispatch } = useStateValue();
-    const { postsList, currentUser } = state;
+    const { state } = useStateValue();
+    const { postsList } = state;
 
     return (
         <FeedContainer>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
 import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent } from './Register.styled';
 import { Logo, ActionsForm, ActionInput, ActionLabel, ActionItem, ActionButton } from '../Login/Login.styled';
 import { DEFAULT_PROFİLE, LOGO_URL } from '../../imagePaths';
@@ -28,12 +28,12 @@ const Register = () => {
             email,
             profilePic: profilePic ? profilePic : DEFAULT_PROFİLE,
             userId: uuidv4()
-        }
+        };
 
         dispatch({ type: actionTypes.CREATE_USER, user: newUserObj });
         alert('Kullanıcı kaydınız oluşturuldu !');
         navigate("/", { replace: true });
-    }
+    };
 
     return (
         <RegisterContainer>
@@ -108,7 +108,7 @@ const Register = () => {
                 </RegisterActions>
             </RegisterContent>
         </RegisterContainer>
-    )
+    );
 };
 
 export default Register;
