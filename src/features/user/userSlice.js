@@ -8,21 +8,18 @@ export const userSlice = createSlice({
         currentUser: null,
     },
     reducers: {
-        createUser: (state, action) => {
-            state.usersList.push(action.payload);
+        getAllUser: (state, { payload }) => void (state.usersList = payload),
+        getUser: (state, { payload }) => void (state.currentUser = payload),
+        createUser: (state, { payload }) => {
+            state.usersList.push(payload);
             setData('usersList', state.usersList);
         },
-        loginUser: (state, action) => {
-            state.currentUser = action.payload;
+        loginUser: (state, { payload }) => {
+            state.currentUser = payload;
             setData('currentUser', state.currentUser);
         },
-        getAllUser: (state, action) => {
-            state.usersList = action.payload;
-        },
-        getUser: (state, action) => {
-            state.currentUser = action.payload;
-        },
-        clearUser: (state, action) => {
+
+        clearUser: (state) => {
             setData('currentUser', null);
             state.currentUser = null;
         },
