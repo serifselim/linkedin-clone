@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LOGIN_BACKGROUND, LOGO_URL } from '../../imagePaths';
+import { LOGIN_BACKGROUND, LOGO_URL } from '../../constants/imagePaths';
 import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,20 +14,13 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const currentUser = usersList.filter((user) => user.email === email && user.password === password);
 
-        const queryUser = {
-            email,
-            password
-        };
-        console.log(usersList);
-        const currentUser = usersList.filter((user) => user.email === queryUser.email && user.password === queryUser.password);
-
-        if (currentUser.length > 0) {
-            dispatch(loginUser(currentUser[0]));
-        } else {
+        // Check User
+        currentUser.length > 0 ?
+            dispatch(loginUser(currentUser[0]))
+            :
             alert('E-postayı ya da parolayı yanlış girdiniz !');
-        }
-
     };
 
     return (
@@ -52,7 +45,6 @@ const Login = () => {
                 <MainContainer>
 
                     <LoginActions>
-
                         <h1>
                             Profesyonel topluluğunuza hoş geldiniz!
                         </h1>

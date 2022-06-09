@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-// import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Feed, FlowChart, Header, MessageSender, Sidebar } from '../../components';
 import SendMessage from '../../components/MessageSender/SendMessage';
 import { StyledHomeContainer, Main } from './Home.styled';

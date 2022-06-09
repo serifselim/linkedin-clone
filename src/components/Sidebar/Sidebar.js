@@ -1,6 +1,6 @@
 import React from 'react';
 import { Background, ProfileImage, SidebarItem, SidebarContainer, SidebarProfile, SidebarViewers, ProfileMajor, ProfileTitle, ViewerContent, ViewerTitle, ViewerValue, ItemIcon, ItemText } from './Sidebar.styled';
-import { BACKGROUND_URL } from '../../imagePaths';
+import { BACKGROUND_URL } from '../../constants/imagePaths';
 import { useSelector } from 'react-redux';
 
 

@@ -13,7 +13,6 @@ export const MessageContainer = styled.div`
 export const SendContent = styled.div`
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     margin: 1.6rem;
 `;
 
@@ -148,7 +147,7 @@ export const ProfileDetails = styled.div`
 
 export const MessageBox = styled.div`
     width: 100%;
-`
+`;
 
 export const MessageArea = styled.textarea`
     width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlowChartContainer, FlowChartList } from './FlowChart.styled';
 import FlowChartListItem from './FlowChartListItem';
-import { FlowChartData } from '../../db/data';
+import { FlowChartData } from '../../constants/flowChartList';
 
 const FlowChart = () => {
     return (

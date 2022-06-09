@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { FlowChartItem } from './FlowChart.styled';
-import { IMAGE_URL } from '../../imagePaths';
-import { AiOutlinePlus } from 'react-icons/ai'
+import { IMAGE_URL } from '../../constants/imagePaths';
+import { AiOutlinePlus } from 'react-icons/ai';
 
 const FlowChartListItem = ({ title, major, image }) => {
     return (
@@ -16,7 +16,7 @@ const FlowChartListItem = ({ title, major, image }) => {
                 </button>
             </div>
         </FlowChartItem>
-    )
-}
+    );
+};
 
-export default FlowChartListItem
+export default FlowChartListItem;

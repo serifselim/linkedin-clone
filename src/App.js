@@ -12,21 +12,12 @@ const App = () => {
   const { currentUser } = useSelector(state => state.user);
   const dispatch = useDispatch();
 
+  const checkData = (data, func) => data && dispatch(func(data));
+
   useEffect(() => {
-    const usersList = getData('usersList');
-    const currentUser = getData('currentUser');
-    const postsList = getData('postsList');
-
-    if (usersList) {
-      dispatch(getAllUser(usersList));
-    };
-    if (currentUser) {
-      dispatch(getUser(currentUser));
-    };
-    if (postsList) {
-      dispatch(getPosts(postsList));
-    }
-
+    checkData(getData('usersList'), getAllUser);
+    checkData(getData('currentUser'), getUser);
+    checkData(getData('postsList'), getPosts);
   }, []);
 
   return (
