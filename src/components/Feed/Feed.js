@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const Feed = () => {
 
-    const { postsList } = useSelector(state => state.user);
+    const { postsList } = useSelector(state => state.post);
 
     return (
         <FeedContainer>

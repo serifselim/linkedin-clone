@@ -22,7 +22,6 @@ const SendMessage = ({ setIsOpen }) => {
         };
 
         dispatch(setPostItem(post));
-
         setIsOpen(false);
     };
 

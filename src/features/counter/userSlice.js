@@ -7,36 +7,27 @@ const initialState = {
     usersList: []
 };
 
+const reducers = {
+    getAllUser: (state, { payload }) => state.usersList = payload,
+    getUser: (state, { payload }) => state.currentUser = payload,
+    createUser: (state, { payload }) => {
+        state.usersList.push(payload);
+        setData('usersList', state.usersList);
+    },
+    loginUser: (state, { payload }) => {
+        state.currentUser = payload;
+        setData('currentUser', state.currentUser);
+    },
+    clearUser: (state) => {
+        setData('currentUser', null);
+        state.currentUser = null;
+    },
+};
+
 export const counterSlice = createSlice({
     name: 'counter',
     initialState,
-    reducers: {
-        createUser: (state, action) => {
-            state.usersList.push(action.payload);
-            setData('usersList', state.usersList);
-        },
-        loginUser: (state, action) => {
-            state.currentUser = action.payload;
-            setData('currentUser', state.currentUser);
-        },
-        getAllUser: (state, action) => {
-            state.usersList = action.payload;
-        },
-        getUser: (state, action) => {
-            state.currentUser = action.payload;
-        },
-        clearUser: (state, action) => {
-            setData('currentUser', null);
-            state.currentUser = null;
-        },
-        setPostItem: (state, action) => {
-            state.postsList.push(action.payload);
-            setData('postsList', state.postsList);
-        },
-        getPosts: (state, action) => {
-            state.postsList = action.payload;
-        }
-    }
+    reducers
 });
 
 export const {
@@ -45,8 +36,6 @@ export const {
     getAllUser,
     getUser,
     clearUser,
-    setPostItem,
-    getPosts
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
