@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent } from './Register.styled';
 import { Logo, ActionsForm, ActionInput, ActionLabel, ActionItem, ActionButton } from '../Login/Login.styled';
 import { DEFAULT_PROFİLE, LOGO_URL } from '../../imagePaths';
-import { useStateValue } from '../../context/Provider';
-import { actionTypes } from '../../context/reducer';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../../features/counter/counterSlice';
 
 const Register = () => {
 
-    const { dispatch } = useStateValue();
+    // const { dispatch } = useStateValue();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [userName, setUserName] = useState('');
     const [job, setJob] = useState('');
@@ -30,7 +31,8 @@ const Register = () => {
             userId: uuidv4()
         };
 
-        dispatch({ type: actionTypes.CREATE_USER, user: newUserObj });
+        // dispatch({ type: actionTypes.CREATE_USER, user: newUserObj });
+        dispatch(createUser(newUserObj));
         alert('Kullanıcı kaydınız oluşturuldu !');
         navigate("/", { replace: true });
     };

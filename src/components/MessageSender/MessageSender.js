@@ -3,12 +3,11 @@ import { DirectsList, ItemText, ListItem, MessageButton, MessageContainer, Profi
 import { BsImage } from 'react-icons/bs';
 import { IoLogoYoutube } from 'react-icons/io5';
 import { BsFillCalendar2RangeFill, BsFileTextFill } from 'react-icons/bs';
-import { useStateValue } from '../../context/Provider';
+import { useSelector } from 'react-redux';
 
 const MessageSender = ({ setIsOpen }) => {
 
-    const { state } = useStateValue();
-    const { currentUser } = state;
+    const { currentUser } = useSelector(state => state.counter);
 
     return (
         <MessageContainer>

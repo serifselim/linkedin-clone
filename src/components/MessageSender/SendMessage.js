@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { ProfileBox, ProfileContent, SendMessageContainer, SendMessageContext, TopBox, ProfileDetails, MessageBox, MessageArea, BottomBox, BottomContent, ImageInput, SendButton } from './MessageSender.styled';
 import { ImCancelCircle } from 'react-icons/im';
-import { useStateValue } from '../../context/Provider';
-import { actionTypes } from '../../context/reducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPostItem } from '../../features/counter/counterSlice';
 
 const SendMessage = ({ setIsOpen }) => {
 
-    const { state, dispatch } = useStateValue();
-    const { currentUser } = state;
+    const { currentUser } = useSelector(state => state.counter);
+    const dispatch = useDispatch();
 
     const [postMessage, setPostMessage] = useState('');
     const [postImageURL, setPostImageURL] = useState('');
@@ -21,10 +21,10 @@ const SendMessage = ({ setIsOpen }) => {
             postImageURL
         };
 
-        dispatch({ type: actionTypes.SET_POST_ITEM, post })
+        dispatch(setPostItem(post));
 
         setIsOpen(false);
-    }
+    };
 
     return (
         <SendMessageContainer>
@@ -70,7 +70,7 @@ const SendMessage = ({ setIsOpen }) => {
 
             </SendMessageContext>
         </SendMessageContainer>
-    )
-}
+    );
+};
 
-export default SendMessage
+export default SendMessage;

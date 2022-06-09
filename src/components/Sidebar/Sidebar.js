@@ -1,13 +1,12 @@
 import React from 'react';
 import { Background, ProfileImage, SidebarItem, SidebarContainer, SidebarProfile, SidebarViewers, ProfileMajor, ProfileTitle, ViewerContent, ViewerTitle, ViewerValue, ItemIcon, ItemText } from './Sidebar.styled';
 import { BACKGROUND_URL } from '../../imagePaths';
-import { useStateValue } from '../../context/Provider';
+import { useSelector } from 'react-redux';
 
 
 const Sidebar = () => {
 
-    const { state } = useStateValue();
-    const { currentUser } = state;
+    const { currentUser } = useSelector(state => state.counter);
 
     return (
         <SidebarContainer>

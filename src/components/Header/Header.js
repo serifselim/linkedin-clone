@@ -5,18 +5,18 @@ import { BsPeopleFill } from 'react-icons/bs';
 import { MdOutlineWork } from 'react-icons/md';
 import { RiMessage2Fill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { IoNotificationsSharp } from 'react-icons/io5';
-import { useStateValue } from '../../context/Provider';
-import { actionTypes } from '../../context/reducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../../features/counter/counterSlice';
 
 const Header = () => {
 
-    const { state, dispatch } = useStateValue();
-    const { currentUser } = state;
+    const { currentUser } = useSelector(state => state.counter);
+    const dispatch = useDispatch();
 
     const handleClick = (e) => {
         e.preventDefault();
-        dispatch({ type: actionTypes.CLEAR_USER })
-    }
+        dispatch(clearUser());
+    };
 
     return (
         <HeaderContainer>

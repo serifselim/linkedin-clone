@@ -3,12 +3,13 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { Home, Login, Register } from "./pages";
 import GlobalStyle from './globalStyle';
-import { useStateValue } from './context/Provider';
-import { actionTypes } from './context/reducer';
-import { getData } from './context/utils';
+import { getData } from './app/utils';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllUser, getPosts, getUser } from './features/counter/counterSlice';
 
 const App = () => {
-  const { state, dispatch } = useStateValue();
+  const { currentUser } = useSelector(state => state.counter);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const usersList = getData('usersList');
@@ -16,13 +17,13 @@ const App = () => {
     const postsList = getData('postsList');
 
     if (usersList) {
-      dispatch({ type: actionTypes.GET_ALL_USERS, users: usersList });
+      dispatch(getAllUser(usersList));
     };
     if (currentUser) {
-      dispatch({ type: actionTypes.GET_USER, user: currentUser });
+      dispatch(getUser(currentUser));
     };
     if (postsList) {
-      dispatch({ type: actionTypes.GET_POSTS, postsList });
+      dispatch(getPosts(postsList));
     }
 
   }, []);
@@ -31,7 +32,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={state.currentUser ? <Home /> : <Login />} />
+        <Route path="/" element={currentUser ? <Home /> : <Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </>

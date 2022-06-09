@@ -1,13 +1,12 @@
 import React from 'react';
 import { FeedContainer, FeedList } from './Feed.styled';
 import FeedItem from './FeedItem';
-import { useStateValue } from '../../context/Provider';
 import { fakePostsList } from '../../db/data';
+import { useSelector } from 'react-redux';
 
 const Feed = () => {
 
-    const { state } = useStateValue();
-    const { postsList } = state;
+    const { postsList } = useSelector(state => state.counter);
 
     return (
         <FeedContainer>

@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
-import { useStateValue } from '../../context/Provider';
 import { LOGIN_BACKGROUND, LOGO_URL } from '../../imagePaths';
 import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
-import { actionTypes } from '../../context/reducer';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../features/counter/counterSlice';
 
 const Login = () => {
 
-    const { state, dispatch } = useStateValue();
+    const { usersList } = useSelector(state => state.counter);
+    const dispatch = useDispatch();
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { usersList } = state;
 
         const queryUser = {
             email,
             password
         };
-
+        console.log(usersList);
         const currentUser = usersList.filter((user) => user.email === queryUser.email && user.password === queryUser.password);
 
         if (currentUser.length > 0) {
-            dispatch({ type: actionTypes.LOGIN_USER, user: currentUser[0] });
+            dispatch(loginUser(currentUser[0]));
         } else {
             alert('E-postayı ya da parolayı yanlış girdiniz !');
         }
