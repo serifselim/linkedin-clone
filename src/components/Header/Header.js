@@ -6,11 +6,11 @@ import { MdOutlineWork } from 'react-icons/md';
 import { RiMessage2Fill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { IoNotificationsSharp } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearUser } from '../../features/counter/counterSlice';
+import { clearUser } from '../../features/user/userSlice';
 
 const Header = () => {
 
-    const { currentUser } = useSelector(state => state.counter);
+    const { currentUser } = useSelector(state => state.user);
     const dispatch = useDispatch();
 
     const handleClick = (e) => {

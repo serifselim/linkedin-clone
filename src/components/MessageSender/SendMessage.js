@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { ProfileBox, ProfileContent, SendMessageContainer, SendMessageContext, TopBox, ProfileDetails, MessageBox, MessageArea, BottomBox, BottomContent, ImageInput, SendButton } from './MessageSender.styled';
 import { ImCancelCircle } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPostItem } from '../../features/counter/counterSlice';
+import { setPostItem } from '../../features/post/postSlice';
 
 const SendMessage = ({ setIsOpen }) => {
 
-    const { currentUser } = useSelector(state => state.counter);
+    const { currentUser } = useSelector(state => state.user);
     const dispatch = useDispatch();
 
     const [postMessage, setPostMessage] = useState('');

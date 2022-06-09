@@ -5,10 +5,11 @@ import { Home, Login, Register } from "./pages";
 import GlobalStyle from './globalStyle';
 import { getData } from './app/utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllUser, getPosts, getUser } from './features/counter/counterSlice';
+import { getAllUser, getUser } from './features/user/userSlice';
+import { getPosts } from './features/post/postSlice';
 
 const App = () => {
-  const { currentUser } = useSelector(state => state.counter);
+  const { currentUser } = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -5,11 +5,10 @@ import { DEFAULT_PROFİLE, LOGO_URL } from '../../imagePaths';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { createUser } from '../../features/counter/counterSlice';
+import { createUser } from '../../features/counter/userSlice';
 
 const Register = () => {
 
-    // const { dispatch } = useStateValue();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

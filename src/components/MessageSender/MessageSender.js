@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 const MessageSender = ({ setIsOpen }) => {
 
-    const { currentUser } = useSelector(state => state.counter);
+    const { currentUser } = useSelector(state => state.user);
 
     return (
         <MessageContainer>

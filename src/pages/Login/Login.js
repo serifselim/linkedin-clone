@@ -3,11 +3,11 @@ import { LOGIN_BACKGROUND, LOGO_URL } from '../../imagePaths';
 import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../features/counter/counterSlice';
+import { loginUser } from '../../features/user/userSlice';
 
 const Login = () => {
 
-    const { usersList } = useSelector(state => state.counter);
+    const { usersList } = useSelector(state => state.user);
     const dispatch = useDispatch();
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');

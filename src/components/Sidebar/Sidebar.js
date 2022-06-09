@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
 
-    const { currentUser } = useSelector(state => state.counter);
+    const { currentUser } = useSelector(state => state.user);
 
     return (
         <SidebarContainer>
