@@ -136,13 +136,15 @@ export const ActionItem = styled.div`
 `;
 
 export const ActionsForm = styled.form`
-
+    display: flex;
+    flex-direction: column;
 `;
 
 export const ActionInput = styled.input`
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: 400;
+    display: ${({ none }) => none && 'none'};
     color: rgba(0,0,0,0.9);
     height: 48px;
     width: 100%;

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent } from './Register.styled';
+import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent, AvatarImage } from './Register.styled';
 import { Logo, ActionsForm, ActionInput, ActionLabel, ActionItem, ActionButton } from '../Login/Login.styled';
-import { DEFAULT_PROFİLE, LOGO_URL } from '../../constants/imagePaths';
+import { DEFAULT_PROFILE, LOGO_URL } from '../../constants/imagePaths';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../../features/user/userSlice';
+import { MdAddAPhoto } from 'react-icons/md';
 
 const Register = () => {
 
@@ -25,13 +26,24 @@ const Register = () => {
             job,
             password,
             email,
-            profilePic: profilePic ? profilePic : DEFAULT_PROFİLE,
+            profilePic: profilePic ? profilePic : DEFAULT_PROFILE,
             userId: uuidv4()
         };
 
         dispatch(createUser(newUserObj));
         alert('Kullanıcı kaydınız oluşturuldu !');
         navigate("/", { replace: true });
+    };
+
+    const changeImage = (e) => {
+        const file = e.target.files[0];
+        const fReader = new FileReader();
+
+        fReader.onload = () => {
+            setProfilePic(fReader.result);
+        };
+
+        fReader.readAsDataURL(file);
     };
 
     return (
@@ -47,18 +59,21 @@ const Register = () => {
                         Profesyonel hayatınızdan en iyi şekilde yararlanın
                     </h1>
 
-                    <img src={profilePic ? profilePic : DEFAULT_PROFİLE} alt='avatar' />
 
                     <ActionsForm onSubmit={handleSubmit}>
-                        <ActionItem active={profilePic}>
-                            <ActionInput
-                                type='url'
-                                value={profilePic}
-                                onChange={(e) => setProfilePic(e.target.value)}
-                            />
-
-                            <ActionLabel>Profil URL (Zorunlu Değil)</ActionLabel>
-                        </ActionItem>
+                        <ActionInput
+                            type='file'
+                            accept="image/*"
+                            none
+                            id="file"
+                            onChangeCapture={changeImage}
+                        />
+                        <AvatarImage
+                            bgImage={profilePic ? profilePic : DEFAULT_PROFILE}
+                            htmlFor="file"
+                        >
+                            <MdAddAPhoto fill='#ƒff' size={50} />
+                        </AvatarImage>
 
                         <ActionItem active={email}>
                             <ActionInput
