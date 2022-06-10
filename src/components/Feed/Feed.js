@@ -1,7 +1,6 @@
 import React from 'react';
 import { FeedContainer, FeedList } from './Feed.styled';
 import FeedItem from './FeedItem';
-import { fakePostsList } from '../../constants/fakePostList';
 import { useSelector } from 'react-redux';
 
 const Feed = () => {
@@ -11,7 +10,7 @@ const Feed = () => {
     return (
         <FeedContainer>
             <FeedList>
-                {[...fakePostsList, ...postsList].map((post, index) => (
+                {postsList.map((post, index) => (
                     <FeedItem
                         key={index}
                         profileURL={post.postOwner.profilePic}

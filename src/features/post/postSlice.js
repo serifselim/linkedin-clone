@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { setData } from '../../app/utils';
+import { fakePostsList } from '../../constants/fakePostList';
 
 const initialState = {
-    postsList: [],
+    postsList: fakePostsList,
 };
 
 const reducers = {
-    getPosts: (state, { payload }) => void (state.postsList = payload),
+    getPosts: (state, { payload }) => void (state.postsList = [...state.postsList, ...payload]),
     setPostItem: (state, { payload }) => {
         state.postsList.push(payload);
         setData('postsList', state.postsList);
