@@ -57,7 +57,7 @@ export const ListItem = styled.li`
     border-radius: .8rem;
 
     &:hover{
-        background-color: ${({ theme }) => theme.searchBgColor};
+        background-color: ${({ theme }) => theme.firstBgColor};
     }
 `;
 
@@ -77,7 +77,7 @@ export const SendMessageContainer = styled.div`
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.75);
+    background-color: ${({ theme }) => theme.inputTextColor};
 `;
 
 export const SendMessageContext = styled.div`
@@ -85,7 +85,7 @@ export const SendMessageContext = styled.div`
     max-width: 55.2rem;
     margin: 0 auto;
     margin-top: 7rem;
-    background-color: white;
+    background-color: ${({ theme }) => theme.secondBgColor};
     border-radius: 1rem;
     max-height: calc(100vh - 160px);
 
@@ -155,6 +155,8 @@ export const MessageArea = styled.textarea`
     height: 30rem;
     font-family: sans-serif;
     font-size: 1.6rem;
+    background: ${({ theme }) => theme.secondBgColor};
+    color: ${({ theme }) => theme.textColor};
 `;
 
 export const BottomBox = styled.div`
