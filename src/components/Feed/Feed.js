@@ -11,20 +11,7 @@ const Feed = () => {
     return (
         <FeedContainer>
             <FeedList>
-                {fakePostsList.map((post, index) => (
-                    <FeedItem
-                        key={index}
-                        profileURL={post.profilePic}
-                        name={post.userName}
-                        job={post.job}
-                        lastDate={post.lastDate}
-                        postMessage={post.postMessage}
-                        postImageURL={post.postImageURL}
-                        socialMediaLink={post.socialMediaLink}
-                    />
-                ))}
-
-                {postsList && postsList.map((post, index) => (
+                {[...fakePostsList, ...postsList].map((post, index) => (
                     <FeedItem
                         key={index}
                         profileURL={post.postOwner.profilePic}
@@ -33,6 +20,7 @@ const Feed = () => {
                         lastDate="Az önce"
                         postMessage={post.postMessage}
                         postImageURL={post.postImageURL}
+                        socialMediaLink={post.socialMediaLink}
                     />
                 ))}
             </FeedList>

@@ -175,11 +175,23 @@ export const BottomContent = styled.div`
 `;
 
 export const ImageInput = styled.input`
-    flex: 2;
-    font-size: 1.4rem;
-    border-right: .1px solid rgba(0,0,0,0.2);
+    display: none;    
+`;
 
+export const ImageInputLabel = styled.label`
+    cursor: pointer;
+    color: #1174b4;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
     
+    & > svg {
+        margin-left: 1rem;
+    }
+
+    &:hover{
+        opacity: .8;
+    }
 `;
 
 export const SendButton = styled(LoginButton)`

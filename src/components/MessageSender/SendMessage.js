@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { ProfileBox, ProfileContent, SendMessageContainer, SendMessageContext, TopBox, ProfileDetails, MessageBox, MessageArea, BottomBox, BottomContent, ImageInput, SendButton } from './MessageSender.styled';
+import { ProfileBox, ProfileContent, SendMessageContainer, SendMessageContext, TopBox, ProfileDetails, MessageBox, MessageArea, BottomBox, BottomContent, ImageInput, SendButton, ImageInputLabel } from './MessageSender.styled';
 import { ImCancelCircle } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPostItem } from '../../features/post/postSlice';
+import { MdImageSearch } from 'react-icons/md';
+import { setImage } from '../../app/utils';
 
 const SendMessage = ({ setIsOpen }) => {
 
@@ -10,7 +12,7 @@ const SendMessage = ({ setIsOpen }) => {
     const dispatch = useDispatch();
 
     const [postMessage, setPostMessage] = useState('');
-    const [postImageURL, setPostImageURL] = useState('');
+    const [postImage, setPostImage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +20,7 @@ const SendMessage = ({ setIsOpen }) => {
         const post = {
             postOwner: currentUser,
             postMessage,
-            postImageURL
+            postImageURL: postImage
         };
 
         dispatch(setPostItem(post));
@@ -59,7 +61,26 @@ const SendMessage = ({ setIsOpen }) => {
 
                     <BottomBox>
                         <BottomContent>
-                            <ImageInput value={postImageURL} onChange={(e) => setPostImageURL(e.target.value)} type='url' placeholder='Resim ekle (URL)' />
+                            {/* <ImageInput value={postImageURL} onChange={(e) => setPostImageURL(e.target.value)} type='url' placeholder='Resim ekle (URL)' /> */}
+                            <ImageInput
+                                type='file'
+                                accept='image/*'
+                                id="postImage"
+                                onChangeCapture={(e) => setImage({
+                                    file: e.target.files[0],
+                                    setState: setPostImage
+                                })}
+                            />{
+                                postImage
+                                    ?
+                                    <ImageInputLabel>Görsel Tanımlandı.</ImageInputLabel>
+                                    :
+                                    <ImageInputLabel htmlFor='postImage'>
+                                        Görsel Ekle
+                                        <MdImageSearch size={20} />
+                                    </ImageInputLabel>
+                            }
+
                             <SendButton>
                                 Yayınla
                             </SendButton>

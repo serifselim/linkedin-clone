@@ -5,7 +5,7 @@ export const userSlice = createSlice({
     name: 'counter',
     initialState: {
         usersList: [],
-        currentUser: null,
+        currentUser: {},
     },
     reducers: {
         getAllUser: (state, { payload }) => void (state.usersList = payload),

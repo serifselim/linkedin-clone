@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../../features/user/userSlice';
 import { MdAddAPhoto } from 'react-icons/md';
+import { setImage } from '../../app/utils';
 
 const Register = () => {
 
@@ -35,17 +36,6 @@ const Register = () => {
         navigate("/", { replace: true });
     };
 
-    const changeImage = (e) => {
-        const file = e.target.files[0];
-        const fReader = new FileReader();
-
-        fReader.onload = () => {
-            setProfilePic(fReader.result);
-        };
-
-        fReader.readAsDataURL(file);
-    };
-
     return (
         <RegisterContainer>
             <RegisterContent>
@@ -66,7 +56,10 @@ const Register = () => {
                             accept="image/*"
                             none
                             id="file"
-                            onChangeCapture={changeImage}
+                            onChangeCapture={(e) => setImage({
+                                file: e.target.files[0],
+                                setState: setProfilePic
+                            })}
                         />
                         <AvatarImage
                             bgImage={profilePic ? profilePic : DEFAULT_PROFILE}
