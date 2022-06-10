@@ -11,9 +11,9 @@ export const FeedList = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.secondBgColor};
     border-radius: .8rem;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid ${({ theme }) => theme.borderColor};
     margin-bottom: 1rem;
 `;
 
@@ -41,6 +41,7 @@ export const UserName = styled.span`
 `;
 
 export const UserMajor = styled(ProfileMajor)`
+    color: ${({ theme }) => theme.textColor};
     margin: .1rem 0;
 `;
 
@@ -95,8 +96,8 @@ export const FeedbackButton = styled.button`
     font-weight: bold;
     color: gray;
     border: none;
-    background-color: white;
-    border-top: .1px solid rgba(0,0,0,0.1);
+    background-color: ${({ theme }) => theme.secondBgColor};
+    border-top: .1px solid ${({ theme }) => theme.borderColor};
     display: flex;
     align-items: center;
     justify-content: center;

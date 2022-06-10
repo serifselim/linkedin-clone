@@ -13,7 +13,8 @@ const GlobalStyle = createGlobalStyle`
 
      body{
          font-family: sans-serif;
-         background: #F3F2EF;
+         color:  ${({ theme }) => theme.textColor};
+         background: ${({ theme }) => theme.firstBgColor};
      }
 
      li{

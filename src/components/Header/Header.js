@@ -8,7 +8,7 @@ import { IoNotificationsSharp } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearUser } from '../../features/user/userSlice';
 
-const Header = () => {
+const Header = ({ changeTheme, theme }) => {
 
     const { currentUser } = useSelector(state => state.user);
     const dispatch = useDispatch();
@@ -22,32 +22,15 @@ const Header = () => {
         <HeaderContainer>
             <HeaderContent>
                 <Logo size={35} />
-                <SearchBox>
-                    <SearchIcon size={20} />
-                    <SearchInput placeholder='Arama yap' />
-                </SearchBox>
+                <NavListItem onClick={() => changeTheme()}>
+                    {theme.themeMode}
+                </NavListItem>
 
                 <HeaderNav>
                     <NavList>
-                        <NavListItem active>
+                        <NavListItem>
                             <ImHome size={25} />
                             <span>Ana Sayfa</span>
-                        </NavListItem>
-                        <NavListItem>
-                            <BsPeopleFill size={25} />
-                            <span>Ağım</span>
-                        </NavListItem>
-                        <NavListItem>
-                            <MdOutlineWork size={25} />
-                            <span>İş İlanları</span>
-                        </NavListItem>
-                        <NavListItem>
-                            <RiMessage2Fill size={25} />
-                            <span>Mesajlaşma</span>
-                        </NavListItem>
-                        <NavListItem>
-                            <IoNotificationsSharp size={25} />
-                            <span>Bildirimler</span>
                         </NavListItem>
                         <NavListItem>
                             <HeaderProfile src={currentUser.profilePic} alt="profile" />

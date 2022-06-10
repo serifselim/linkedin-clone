@@ -5,9 +5,9 @@ export const MessageContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.secondBgColor};
     border-radius: .8rem;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid ${({ theme }) => theme.borderColor};
 `;
 
 export const SendContent = styled.div`
@@ -32,12 +32,12 @@ export const MessageButton = styled.button`
     height: 100%;
     text-align: left;
     font-weight: bold;
-    color: gray;
+    color: ${({ theme }) => theme.inputTextColor};
     background-color: transparent;
     cursor: pointer;
 
     &:hover{
-        background-color: #EBEBEB;
+        background-color: ${({ theme }) => theme.searchBgColor};
     }
 `;
 
@@ -57,14 +57,14 @@ export const ListItem = styled.li`
     border-radius: .8rem;
 
     &:hover{
-        background-color: #EBEBEB;
+        background-color: ${({ theme }) => theme.searchBgColor};
     }
 `;
 
 export const ItemText = styled.span`
     font-size: 1.4rem;
     font-weight: bold;
-    color: #5E5E5E;
+    color: ${({ theme }) => theme.inputTextColor};
     margin-left: 1.5rem;
 `;
 
@@ -103,7 +103,7 @@ export const TopBox = styled.div`
     & > h2{
         font-size: 2rem;
         font-weight: 400;
-        color: gray;
+        color: ${({ theme }) => theme.inputTextColor};
     }
 
     & > a:hover{
@@ -113,7 +113,7 @@ export const TopBox = styled.div`
 
 export const ProfileBox = styled.div`
     width: 100%;
-    border-top: .1px solid rgba(0,0,0,0.2);
+    border-top: .1px solid ${({ theme }) => theme.borderColor};
 `;
 
 export const ProfileContent = styled.div`
@@ -141,7 +141,7 @@ export const ProfileDetails = styled.div`
     & > span {
         font-size: 1.2rem;
         font-weight: 200;
-        color: rgba(0,0,0,0.5);
+        color: ${({ theme }) => theme.inputTextColor};
     }
 `;
 
@@ -159,14 +159,13 @@ export const MessageArea = styled.textarea`
 
 export const BottomBox = styled.div`
     width: 100%;
-    border-top: .1px solid rgba(0,0,0,0.2);
+    border-top: .1px solid ${({ theme }) => theme.borderColor};
 `;
 
 export const BottomContent = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1.2rem 2.4rem;
-
 
     @media (max-width: 768px){
         flex-direction: column;
@@ -180,7 +179,7 @@ export const ImageInput = styled.input`
 
 export const ImageInputLabel = styled.label`
     cursor: pointer;
-    color: #1174b4;
+    color: ${({ theme }) => theme.primaryColor};
     font-size: 1.6rem;
     display: flex;
     align-items: center;
@@ -195,7 +194,7 @@ export const ImageInputLabel = styled.label`
 `;
 
 export const SendButton = styled(LoginButton)`
-    background-color: #1174B4;
+    background-color: ${({ theme }) => theme.primaryColor};
     color: white;
     font-weight: 500;
     font-size: 1.4rem;

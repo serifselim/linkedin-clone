@@ -35,7 +35,7 @@ export const AvatarImage = styled.label`
 
         & > svg {
             display: none;
-            fill: #1174B4;
+            fill: ${({ theme }) => theme.primaryColor};
         }
 
         &:hover{

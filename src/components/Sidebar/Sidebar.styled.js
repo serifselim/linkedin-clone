@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-import { BsFillBookmarkFill } from 'react-icons/bs'
+import { BsFillBookmarkFill } from 'react-icons/bs';
 
 export const SidebarContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.secondBgColor};
         border-radius: .8rem;
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid ${({ theme }) => theme.borderColor};
         height: min-content;
 `;
 
@@ -25,7 +25,7 @@ export const Background = styled.img`
 export const SidebarProfile = styled.div`
     padding-bottom: 1.2rem;
     width: 100%;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid ${({ theme }) => theme.borderColor};
     z-index: 99;
     text-align: center;
 `;
@@ -41,13 +41,13 @@ export const ProfileImage = styled.img`
 export const ProfileTitle = styled.h3`
     font-size: 1.6rem;
     font-weight: bold;
-`
+`;
 
 export const ProfileMajor = styled.span`
     display: block;
     font-size: 1.2rem;
     margin-top: .8rem;
-    color: rgba(0,0,0,0.5);
+    color: ${({ theme }) => theme.inputTextColor};
 `;
 
 export const SidebarViewers = styled.div`
@@ -55,7 +55,7 @@ export const SidebarViewers = styled.div`
     flex-direction: column;
     padding: 1.2rem;
     width: 100%;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid ${({ theme }) => theme.borderColor};
 `;
 
 export const ViewerContent = styled.div`
@@ -66,16 +66,16 @@ export const ViewerContent = styled.div`
     &:first-child{
         margin-bottom: 1rem;
     }
-`
+`;
 
 export const ViewerTitle = styled.span`
     font-size: 1.2rem;
-    color: #9F9F9F;
+    color: ${({ theme }) => theme.inputTextColor};
     font-weight: bold;
 `;
 
 export const ViewerValue = styled.span`
-    color: #0a66c2;
+    color: ${({ theme }) => theme.primaryColor};
     font-weight: bold;
     font-size: 1.3rem;
 `;
@@ -89,11 +89,11 @@ export const SidebarItem = styled.div`
 
 export const ItemIcon = styled(BsFillBookmarkFill)`
     margin-right: 1rem;
-    color:#191919;
+    color:${({ theme }) => theme.textColor};
 `;
 
 export const ItemText = styled.span`
-    color:#191919;
+    color:${({ theme }) => theme.textColor};
     font-size: 1.2em;
     font-weight: bold;
 `;

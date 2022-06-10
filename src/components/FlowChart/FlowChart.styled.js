@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const FlowChartContainer = styled.section`
     padding: 1.2rem;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.secondBgColor};
         border-radius: .8rem;
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid ${({ theme }) => theme.borderColor};
         height: min-content;
     & > h1{
         font-size: 1.6rem;
@@ -59,14 +59,14 @@ export const FlowChartItem = styled.li`
 
             &:hover{
                 box-sizing: border-box;
-                background-color: #EBEBEB;
-                border: 1px solid black;
+                background-color: ${({ theme }) => theme.searchBgColor};
+                border: 1px solid ${({ theme }) => theme.textColor};
             }
 
         }
 
         & > span {
-            color: rgba(0,0,0,0.5);
+            color: ${({ theme }) => theme.inputTextColor};
             font-size: 1.2rem;
         }
     } 

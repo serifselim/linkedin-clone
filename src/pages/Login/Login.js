@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { LOGIN_BACKGROUND, LOGO_URL } from '../../constants/imagePaths';
-import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
+import { LOGO_URL } from '../../constants/imagePaths';
+import { ThemeButton, LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../features/user/userSlice';
+import bgImage from '../../assets/bgImage.png';
 
-const Login = () => {
+const Login = ({ changeTheme, theme }) => {
 
     const { usersList } = useSelector(state => state.user);
     const dispatch = useDispatch();
@@ -29,6 +30,9 @@ const Login = () => {
 
                 <Header>
                     <Logo src={LOGO_URL} />
+                    <ThemeButton onClick={() => changeTheme()}>
+                        {theme.themeMode}
+                    </ThemeButton>
 
                     <Actions>
                         <Link to='/register'>
@@ -77,7 +81,8 @@ const Login = () => {
 
                     </LoginActions>
 
-                    <BackgroundImg src={LOGIN_BACKGROUND} />
+                    <BackgroundImg src={bgImage} />
+
                 </MainContainer>
             </LoginContent>
         </LoginContainer>

@@ -3,14 +3,14 @@ import { Feed, FlowChart, Header, MessageSender, Sidebar } from '../../component
 import SendMessage from '../../components/MessageSender/SendMessage';
 import { StyledHomeContainer, Main } from './Home.styled';
 
-const Home = () => {
+const Home = ({ changeTheme, theme }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
             {isOpen && <SendMessage setIsOpen={setIsOpen} />}
-            <Header />
+            <Header changeTheme={changeTheme} theme={theme} />
             <StyledHomeContainer>
                 <Sidebar />
                 <Main>

@@ -10,7 +10,7 @@ export const StyledHomeContainer = styled.main`
     & > hr{
         display: block;
         background-color: red;
-        border: .1px solid #6666;
+        border: .1px solid #${({ theme }) => theme.borderColor};
     }
 
     & > *:last-child{
@@ -43,8 +43,8 @@ export const Main = styled.section`
     flex-direction: column;
 
     & > hr{
-        border: .1px solid #6666;
+        border: .1px solid ${({ theme }) => theme.borderColor};
         margin: 2rem 0;
         border-radius: 50%;
     }
-`
+`;
