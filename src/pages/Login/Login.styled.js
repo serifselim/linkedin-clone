@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const LoginContainer = styled.main`
     width: 100%;
     height: 100vh;
-    background: #FDFDFD;
+    background: ${({ theme }) => theme.secondBgColor};
 `;
 
 export const LoginContent = styled.section`
@@ -63,21 +62,25 @@ export const RegisterButton = styled.button`
     border: none;
     padding: 0 1.2rem;
     margin-right: 1.2rem;
-    color: gray;
+    color: ${({ theme }) => theme.textColor};
     background: none;
     font-weight: 600;
     font-size: 1.6rem;
 
     &:hover{
-        color: black;
+        color: ${({ theme }) => theme.inputTextColor};
     }
 `;
 
 export const LoginButton = styled.button`
     border-radius: 1.8rem;
     padding: 1rem 2.4rem;
-    color: #1174B4;
-    border: 1px solid #1174B4;
+    color: ${({ theme }) => theme.primaryColor};
+    border: 1px solid ${({ theme }) => theme.borderColor};
+
+    &:hover{
+        opacity: .9;
+    }
 `;
 
 export const LoginActions = styled.div`
@@ -108,22 +111,12 @@ export const ActionItem = styled.div`
     position: relative;
     width: 100%;
     margin-top: 1.2rem;
-/* 
-    & > input:focus ~ label{
-        font-size: 1.2rem;
-        line-height: 1.33333;
-        font-weight: 400;
-        color: rgba(0,0,0,0.6);
-        padding-top: 6px;
-        -webkit-transition-delay: 0s;
-        transition-delay: 0s;
-    } */
 
     & > label {
         font-size: ${({ active }) => active ? '1.2rem' : '1.6rem'};
         line-height: ${({ active }) => active ? '1.33333' : '1.5'};
         font-weight: 400;
-        color: rgba(0,0,0,0.6);
+        color: ${({ theme }) => theme.textColor};
         position: absolute;
         padding-top: ${({ active }) => active ? '.6rem' : '1.3rem'};
         background-color: transparent;
@@ -137,17 +130,19 @@ export const ActionItem = styled.div`
 `;
 
 export const ActionsForm = styled.form`
-
+    display: flex;
+    flex-direction: column;
 `;
 
 export const ActionInput = styled.input`
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: 400;
-    color: rgba(0,0,0,0.9);
+    display: ${({ none }) => none && 'none'};
+    color: ${({ theme }) => theme.inputTextColor};
     height: 48px;
     width: 100%;
-    border: 1px solid rgba(0,0,0,0.6);
+    border: 1px solid ${({ theme }) => theme.borderColor};
     border-radius: 2px;
     background-color: transparent;
     padding: 20px 12px 4px;
@@ -158,7 +153,7 @@ export const ActionLabel = styled.label`
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: 400;
-    color: rgba(0,0,0,0.6);
+    color: ${({ theme }) => theme.textColor};
     position: absolute;
     background-color: transparent;
     width: 100%;
@@ -178,11 +173,19 @@ export const ActionButton = styled.button`
     padding: 1.6rem 0;
     font-size: 2rem;
     font-weight: 500;
-    background: #1174B4;
+    background: ${({ theme }) => theme.primaryColor};
     color: white;
     margin-top: 2rem;
 
     &:hover{
-        background: #006097;
+        opacity: .9;
     }
+`;
+
+export const ThemeButton = styled.button`
+    color: ${({ theme }) => theme.textColor};
+    background: none;
+    border: none;
+    margin-left: auto;
+    margin-right: 1.5rem;
 `;

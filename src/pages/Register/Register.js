@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent } from './Register.styled';
+import React, { useState } from 'react';
+import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent, AvatarImage } from './Register.styled';
 import { Logo, ActionsForm, ActionInput, ActionLabel, ActionItem, ActionButton } from '../Login/Login.styled';
-import { DEFAULT_PROFİLE, LOGO_URL } from '../../imagePaths';
-import { useStateValue } from '../../context/Provider';
-import { actionTypes } from '../../context/reducer';
+import { DEFAULT_PROFILE, LOGO_URL } from '../../constants/imagePaths';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../../features/user/userSlice';
+import { MdAddAPhoto } from 'react-icons/md';
+import { setImage } from '../../app/utils';
 
 const Register = () => {
 
-    const { dispatch } = useStateValue();
     const navigate = useNavigate();
-
+    const dispatch = useDispatch();
     const [userName, setUserName] = useState('');
     const [job, setJob] = useState('');
     const [password, setPassword] = useState('');
@@ -26,14 +27,14 @@ const Register = () => {
             job,
             password,
             email,
-            profilePic: profilePic ? profilePic : DEFAULT_PROFİLE,
+            profilePic: profilePic ? profilePic : DEFAULT_PROFILE,
             userId: uuidv4()
-        }
+        };
 
-        dispatch({ type: actionTypes.CREATE_USER, user: newUserObj });
+        dispatch(createUser(newUserObj));
         alert('Kullanıcı kaydınız oluşturuldu !');
         navigate("/", { replace: true });
-    }
+    };
 
     return (
         <RegisterContainer>
@@ -48,18 +49,24 @@ const Register = () => {
                         Profesyonel hayatınızdan en iyi şekilde yararlanın
                     </h1>
 
-                    <img src={profilePic ? profilePic : DEFAULT_PROFİLE} alt='avatar' />
 
                     <ActionsForm onSubmit={handleSubmit}>
-                        <ActionItem active={profilePic}>
-                            <ActionInput
-                                type='url'
-                                value={profilePic}
-                                onChange={(e) => setProfilePic(e.target.value)}
-                            />
-
-                            <ActionLabel>Profil URL (Zorunlu Değil)</ActionLabel>
-                        </ActionItem>
+                        <ActionInput
+                            type='file'
+                            accept="image/*"
+                            none
+                            id="file"
+                            onChangeCapture={(e) => setImage({
+                                file: e.target.files[0],
+                                setState: setProfilePic
+                            })}
+                        />
+                        <AvatarImage
+                            bgImage={profilePic ? profilePic : DEFAULT_PROFILE}
+                            htmlFor="file"
+                        >
+                            <MdAddAPhoto fill='#ƒff' size={50} />
+                        </AvatarImage>
 
                         <ActionItem active={email}>
                             <ActionInput
@@ -108,7 +115,7 @@ const Register = () => {
                 </RegisterActions>
             </RegisterContent>
         </RegisterContainer>
-    )
+    );
 };
 
 export default Register;

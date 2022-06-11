@@ -1,34 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useStateValue } from '../../context/Provider'
-import { LOGIN_BACKGROUND, LOGO_URL } from '../../imagePaths'
-import { LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton, HeaderContainer } from './Login.styled';
-import { actionTypes } from '../../context/reducer';
+import React, { useState } from 'react';
+import { LOGO_URL } from '../../constants/imagePaths';
+import { ThemeButton, LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../features/user/userSlice';
+import bgImage from '../../assets/bgImage.png';
 
-const Login = () => {
+const Login = ({ changeTheme, theme }) => {
 
-    const { state, dispatch } = useStateValue();
-    const [userName, setUserName] = useState('');
+    const { usersList } = useSelector(state => state.user);
+    const dispatch = useDispatch();
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { usersList } = state;
+        const currentUser = usersList.filter((user) => user.email === email && user.password === password);
 
-        const queryUser = {
-            email,
-            password
-        }
-
-        const currentUser = usersList.filter((user) => user.email === queryUser.email && user.password === queryUser.password);
-
-        if (currentUser.length > 0) {
-            dispatch({ type: actionTypes.LOGIN_USER, user: currentUser[0] });
-        } else {
+        // Check User
+        currentUser.length > 0 ?
+            dispatch(loginUser(currentUser[0]))
+            :
             alert('E-postayı ya da parolayı yanlış girdiniz !');
-        }
-
     };
 
     return (
@@ -37,6 +30,9 @@ const Login = () => {
 
                 <Header>
                     <Logo src={LOGO_URL} />
+                    <ThemeButton onClick={() => changeTheme()}>
+                        {theme.themeMode}
+                    </ThemeButton>
 
                     <Actions>
                         <Link to='/register'>
@@ -53,7 +49,6 @@ const Login = () => {
                 <MainContainer>
 
                     <LoginActions>
-
                         <h1>
                             Profesyonel topluluğunuza hoş geldiniz!
                         </h1>
@@ -86,11 +81,12 @@ const Login = () => {
 
                     </LoginActions>
 
-                    <BackgroundImg src={LOGIN_BACKGROUND} />
+                    <BackgroundImg src={bgImage} />
+
                 </MainContainer>
             </LoginContent>
         </LoginContainer>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;

@@ -5,23 +5,27 @@ import { BsPeopleFill } from 'react-icons/bs';
 import { MdOutlineWork } from 'react-icons/md';
 import { RiMessage2Fill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { IoNotificationsSharp } from 'react-icons/io5';
-import { useStateValue } from '../../context/Provider';
-import { actionTypes } from '../../context/reducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../../features/user/userSlice';
 
-const Header = () => {
+const Header = ({ changeTheme, theme }) => {
 
-    const { state, dispatch } = useStateValue();
-    const { currentUser } = state;
+    const { currentUser } = useSelector(state => state.user);
+    const dispatch = useDispatch();
 
     const handleClick = (e) => {
         e.preventDefault();
-        dispatch({ type: actionTypes.CLEAR_USER })
-    }
+        dispatch(clearUser());
+    };
 
     return (
         <HeaderContainer>
             <HeaderContent>
                 <Logo size={35} />
+                <NavListItem onClick={() => changeTheme()}>
+                    {theme.themeMode}
+                </NavListItem>
+
                 <SearchBox>
                     <SearchIcon size={20} />
                     <SearchInput placeholder='Arama yap' />
@@ -29,7 +33,7 @@ const Header = () => {
 
                 <HeaderNav>
                     <NavList>
-                        <NavListItem active>
+                        <NavListItem>
                             <ImHome size={25} />
                             <span>Ana Sayfa</span>
                         </NavListItem>

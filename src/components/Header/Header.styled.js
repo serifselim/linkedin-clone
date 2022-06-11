@@ -5,7 +5,7 @@ import { BiSearchAlt2 } from 'react-icons/bi';
 export const HeaderContainer = styled.header`
     width: 100%;
     height: 6rem;
-    background: white;
+    background: ${({ theme }) => theme.secondBgColor};
 `;
 
 export const HeaderContent = styled.div`
@@ -22,13 +22,15 @@ export const HeaderContent = styled.div`
 `;
 
 export const Logo = styled(BsLinkedin)`
-    color: #0F66C3;
+    color: ${({ theme }) => theme.primaryColor};
     margin-right: 1rem;
 `;
 
 export const SearchBox = styled.div`
     position: relative;
-    max-width: 280px;
+    max-width: 380px;
+    width: 100%;
+    margin-left: 1rem;
 `;
 
 export const SearchInput = styled.input`   
@@ -38,7 +40,8 @@ export const SearchInput = styled.input`
     font-size: 1.4rem;
     height: 34px;
     padding: 0 .8rem 0 4rem;
-    background-color: #EEF3F8;
+    background: ${({ theme }) => theme.firstBgColor};
+    color: ${({ theme }) => theme.inputTextColor};
     border: none;
     outline: none;
     border-radius: .7rem;
@@ -50,7 +53,7 @@ export const SearchInput = styled.input`
 
 export const SearchIcon = styled(BiSearchAlt2)`
     position: absolute;
-    color: #606163;
+    color: ${({ theme }) => theme.inputTextColor};
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
@@ -58,7 +61,7 @@ export const SearchIcon = styled(BiSearchAlt2)`
     @media (max-width: 768px) {
             display: none;
     }    
-`
+`;
 
 export const HeaderNav = styled.nav`
     margin-left: auto;
@@ -76,10 +79,13 @@ export const NavListItem = styled.li`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    color: ${({ active }) => active ? '#191919' : '#666666'};
+
+    &:not(:first-child){
+        color: ${({ theme }) => theme.inputTextColor};
+    }
 
     &:hover{
-        color: #191919;
+        color: ${({ theme }) => theme.textColor};
     }
 
     & > svg, & > img {

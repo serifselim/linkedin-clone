@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import { DirectsList, ItemText, ListItem, MessageButton, MessageContainer, Profile, SendContent, SendMessageContainer } from './MessageSender.styled';
-import { IMAGE_URL } from '../../imagePaths';
+import React from 'react';
+import { DirectsList, ItemText, ListItem, MessageButton, MessageContainer, Profile, SendContent } from './MessageSender.styled';
 import { BsImage } from 'react-icons/bs';
 import { IoLogoYoutube } from 'react-icons/io5';
 import { BsFillCalendar2RangeFill, BsFileTextFill } from 'react-icons/bs';
-import SendMessage from './SendMessage';
-import { useStateValue } from '../../context/Provider';
+import { useSelector } from 'react-redux';
 
 const MessageSender = ({ setIsOpen }) => {
 
-    const { state, dispatch } = useStateValue();
-    const { currentUser } = state;
+    const { currentUser } = useSelector(state => state.user);
 
     return (
         <MessageContainer>
@@ -49,7 +46,7 @@ const MessageSender = ({ setIsOpen }) => {
                 </ListItem>
             </DirectsList>
         </MessageContainer>
-    )
-}
+    );
+};
 
 export default MessageSender;

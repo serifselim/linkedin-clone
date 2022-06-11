@@ -1,31 +1,11 @@
-export const FlowChartData = [
-    {
-        title: 'Javascript',
-        major: 'Şirket * E-Eğitim',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png'
-    },
-    {
-        title: 'React',
-        major: 'Yazılım * Geliştirme',
-        image: 'https://camo.githubusercontent.com/4914c9197e2895531d209d492a33a347711b2c7644aebad686fa3ad5dbc04bf6/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f333630302f312a485369734c7569664d4f364b624c66504f4b744c6f772e6a706567'
-    },
-    {
-        title: 'Stlyed-Components',
-        major: 'Stil * Arayüz',
-        image: 'https://styled-components.com/atom.png'
-    },
-];
-
-// export const headerItemsData = [
-
-// ]
-
 export const fakePostsList = [
     {
-        profilePic: 'https://cdn.discordapp.com/attachments/232579663292006412/964795094781792306/WhatsApp_Image_2022-03-31_at_21.39.34.jpeg',
-        userName: 'Yavuz Selim Şerifoğlu',
-        job: 'Frontend Developer',
-        lastDate: '2 gün önce',
+        postOwner: {
+            profilePic: 'https://cdn.discordapp.com/attachments/232579663292006412/964795094781792306/WhatsApp_Image_2022-03-31_at_21.39.34.jpeg',
+            userName: 'Yavuz Selim Şerifoğlu',
+            job: 'Frontend Developer',
+            lastDate: '2 gün önce',
+        },
         postMessage: `Bu medeniyetin sürekli oluşunu sağlamak için, ülkemizin birçok yerinde, buğday yetişir. Fakat, ülkemizde en çok yetişen, köylüdür. Köylü, bütün iklimlerde yetişir. Köylünün yetişmesi için, çok emek vermeğe ihtiyaç yoktur. Köylü bozkırda yetişir, yaylada yetişir, ormanda yetişir, dağda yetişir, kurak iklimde yetişir, ovada yetişir, sulak iklimde yetişir. Çabuk büyür, erken meyva verir. Kendi kendine yetişir, kendi kendine meyva verir. Biz köylüleri çok severiz. Şehre gelirlerse onlardan kapıcı ve amele yaparız.
 
         - Tehlikeli Oyunlar, Oğuz Atay
@@ -34,10 +14,12 @@ export const fakePostsList = [
         socialMediaLink: 'https://www.instagram.com/srf.selim/'
     },
     {
-        profilePic: 'https://cdn.discordapp.com/attachments/232579663292006412/964796089469399080/A04A9DA6-10FE-49AD-9D82-EC00D4B2EC8B.jpeg',
-        userName: 'Mustafa Taha Şenel',
-        job: 'İşletme Mühendisi',
-        lastDate: '3 gün önce',
+        postOwner: {
+            profilePic: 'https://cdn.discordapp.com/attachments/232579663292006412/964796089469399080/A04A9DA6-10FE-49AD-9D82-EC00D4B2EC8B.jpeg',
+            userName: 'Mustafa Taha Şenel',
+            job: 'İşletme Mühendisi',
+            lastDate: '3 gün önce',
+        },
         postMessage: `🎯 Yaşadığımız dünyevi çağ, temel bir varoluşçu belirsizlik ve sıkıntıyla dolu ve bu, kendimiz olarak kalmayı zorlaştırıyor.
 
         ⏳ Bunun sonucu, çoğumuzun her tür rehberlik, terapi, koçluk, bilinçli farkındalık, pozitif psikoloji ve genel anlamda kişisel gelişim için kolay lokma haline gelmesi; diyet, sağlık ve egzersiz gibi alanlarda, durmadan uyulacak yeni emirler ve rejimler üreten gerçek bir din peyda oldu.
@@ -48,10 +30,12 @@ export const fakePostsList = [
     },
 
     {
-        profilePic: 'https://avatars.githubusercontent.com/u/83032285?v=4',
-        userName: 'Serap Buyukcikrikci',
-        job: 'Tekrom Teknoloji A.Ş. Jr. Frontend Developer',
-        lastDate: '1 gün önce',
+        postOwner: {
+            profilePic: 'https://avatars.githubusercontent.com/u/83032285?v=4',
+            userName: 'Serap Buyukcikrikci',
+            job: 'Tekrom Teknoloji A.Ş. Jr. Frontend Developer',
+            lastDate: '1 gün önce',
+        },
         postMessage: `"Sabır! Sabır! Daha iyiye gidecek. Aslında, sevgili dostum, sen haklısın. Her gün insanların arasına sürüklenip onların neyle uğraştığı gördüğümden beri, kendi varlığımla daha barışık hale geldim."
 
         - Genç Werther'in Acıları
@@ -59,5 +43,4 @@ export const fakePostsList = [
         postImageURL: 'https://images.pexels.com/photos/7181901/pexels-photo-7181901.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         socialMediaLink: 'https://www.linkedin.com/in/serap-buyukcikrikci-837986211/'
     },
-
-]
+];

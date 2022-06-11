@@ -1,40 +1,65 @@
-import React, { useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { Home, Login, Register } from "./pages";
 import GlobalStyle from './globalStyle';
-import { useStateValue } from './context/Provider';
-import { actionTypes } from './context/reducer';
-import { getData } from './context/utils';
+import { getData, setData } from './app/utils';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllUser, getUser } from './features/user/userSlice';
+import { getPosts } from './features/post/postSlice';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from './constants/themeSettings';
 
 const App = () => {
-  const { state, dispatch } = useStateValue();
+
+  const { currentUser } = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const [theme, setTheme] = useState(lightTheme);
+
+  const checkData = (data, func) => data !== {} && dispatch(func(data));
+  const changeTheme = () => {
+    if (theme === darkTheme) {
+      setTheme(lightTheme);
+      setData('theme', 'light');
+    } else {
+      setTheme(darkTheme);
+      setData('theme', 'dark');
+    }
+  };
 
   useEffect(() => {
-    const usersList = getData('usersList');
-    const currentUser = getData('currentUser');
-    const postsList = getData('postsList');
+    const theme = getData('theme');
 
-    if (usersList) {
-      dispatch({ type: actionTypes.GET_ALL_USERS, users: usersList });
-    };
-    if (currentUser) {
-      dispatch({ type: actionTypes.GET_USER, user: currentUser });
-    };
-    if (postsList) {
-      dispatch({ type: actionTypes.GET_POSTS, postsList });
+    // Check States Firstly
+    checkData(getData('usersList'), getAllUser);
+    checkData(getData('currentUser'), getUser);
+    checkData(getData('postsList'), getPosts);
+
+    // Get Current Theme
+    if (theme) {
+      theme === 'light' && setTheme(lightTheme);
+      theme === 'dark' && setTheme(darkTheme);
     }
-
-  }, [])
+  }, []);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={state.currentUser ? <Home /> : <Login />} />
+        <Route
+          path="/"
+          element={
+            currentUser ?
+              <Home theme={theme} changeTheme={changeTheme} />
+              :
+              <Login theme={theme} changeTheme={changeTheme}
+              />
+          }
+        />
         <Route path="/register" element={<Register />} />
       </Routes>
-    </>
-  )
-}
+    </ThemeProvider>
+  );
+};
 
-export default App
+export default App;

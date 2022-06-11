@@ -5,15 +5,14 @@ export const MessageContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.secondBgColor};
     border-radius: .8rem;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid ${({ theme }) => theme.borderColor};
 `;
 
 export const SendContent = styled.div`
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     margin: 1.6rem;
 `;
 
@@ -33,12 +32,12 @@ export const MessageButton = styled.button`
     height: 100%;
     text-align: left;
     font-weight: bold;
-    color: gray;
+    color: ${({ theme }) => theme.inputTextColor};
     background-color: transparent;
     cursor: pointer;
 
     &:hover{
-        background-color: #EBEBEB;
+        background-color: ${({ theme }) => theme.searchBgColor};
     }
 `;
 
@@ -58,14 +57,14 @@ export const ListItem = styled.li`
     border-radius: .8rem;
 
     &:hover{
-        background-color: #EBEBEB;
+        background-color: ${({ theme }) => theme.firstBgColor};
     }
 `;
 
 export const ItemText = styled.span`
     font-size: 1.4rem;
     font-weight: bold;
-    color: #5E5E5E;
+    color: ${({ theme }) => theme.inputTextColor};
     margin-left: 1.5rem;
 `;
 
@@ -78,7 +77,7 @@ export const SendMessageContainer = styled.div`
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.75);
+    background-color: ${({ theme }) => theme.inputTextColor};
 `;
 
 export const SendMessageContext = styled.div`
@@ -86,7 +85,7 @@ export const SendMessageContext = styled.div`
     max-width: 55.2rem;
     margin: 0 auto;
     margin-top: 7rem;
-    background-color: white;
+    background-color: ${({ theme }) => theme.secondBgColor};
     border-radius: 1rem;
     max-height: calc(100vh - 160px);
 
@@ -104,7 +103,7 @@ export const TopBox = styled.div`
     & > h2{
         font-size: 2rem;
         font-weight: 400;
-        color: gray;
+        color: ${({ theme }) => theme.inputTextColor};
     }
 
     & > a:hover{
@@ -114,7 +113,7 @@ export const TopBox = styled.div`
 
 export const ProfileBox = styled.div`
     width: 100%;
-    border-top: .1px solid rgba(0,0,0,0.2);
+    border-top: .1px solid ${({ theme }) => theme.borderColor};
 `;
 
 export const ProfileContent = styled.div`
@@ -142,13 +141,13 @@ export const ProfileDetails = styled.div`
     & > span {
         font-size: 1.2rem;
         font-weight: 200;
-        color: rgba(0,0,0,0.5);
+        color: ${({ theme }) => theme.inputTextColor};
     }
 `;
 
 export const MessageBox = styled.div`
     width: 100%;
-`
+`;
 
 export const MessageArea = styled.textarea`
     width: 100%;
@@ -156,18 +155,19 @@ export const MessageArea = styled.textarea`
     height: 30rem;
     font-family: sans-serif;
     font-size: 1.6rem;
+    background: ${({ theme }) => theme.secondBgColor};
+    color: ${({ theme }) => theme.textColor};
 `;
 
 export const BottomBox = styled.div`
     width: 100%;
-    border-top: .1px solid rgba(0,0,0,0.2);
+    border-top: .1px solid ${({ theme }) => theme.borderColor};
 `;
 
 export const BottomContent = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1.2rem 2.4rem;
-
 
     @media (max-width: 768px){
         flex-direction: column;
@@ -176,15 +176,27 @@ export const BottomContent = styled.div`
 `;
 
 export const ImageInput = styled.input`
-    flex: 2;
-    font-size: 1.4rem;
-    border-right: .1px solid rgba(0,0,0,0.2);
+    display: none;    
+`;
 
+export const ImageInputLabel = styled.label`
+    cursor: pointer;
+    color: ${({ theme }) => theme.primaryColor};
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
     
+    & > svg {
+        margin-left: 1rem;
+    }
+
+    &:hover{
+        opacity: .8;
+    }
 `;
 
 export const SendButton = styled(LoginButton)`
-    background-color: #1174B4;
+    background-color: ${({ theme }) => theme.primaryColor};
     color: white;
     font-weight: 500;
     font-size: 1.4rem;
