@@ -20,8 +20,8 @@ export const userSlice = createSlice({
         },
 
         clearUser: (state) => {
-            setData('currentUser', null);
-            state.currentUser = null;
+            setData('currentUser', {});
+            state.currentUser = {};
         },
     }
 });
