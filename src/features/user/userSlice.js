@@ -5,7 +5,7 @@ export const userSlice = createSlice({
     name: 'counter',
     initialState: {
         usersList: [],
-        currentUser: {},
+        currentUser: null,
     },
     reducers: {
         getAllUser: (state, { payload }) => void (state.usersList = payload),
@@ -20,8 +20,8 @@ export const userSlice = createSlice({
         },
 
         clearUser: (state) => {
-            setData('currentUser', {});
-            state.currentUser = {};
+            setData('currentUser', null);
+            state.currentUser = null;
         },
     }
 });
