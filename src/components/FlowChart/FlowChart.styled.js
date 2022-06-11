@@ -45,9 +45,9 @@ export const FlowChartItem = styled.li`
             font-weight: bold;
         }
 
-        & > button {
+        & > a {
             border-radius: 2rem;
-            color: gray;
+            color: ${({ theme }) => theme.textColor};
             background: none;
             border-radius: 1.8rem;
             border: 1px solid gray;
@@ -66,7 +66,7 @@ export const FlowChartItem = styled.li`
         }
 
         & > span {
-            color: ${({ theme }) => theme.inputTextColor};
+            color: ${({ theme }) => theme.textColor};
             font-size: 1.2rem;
         }
     } 

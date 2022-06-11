@@ -28,7 +28,9 @@ export const Logo = styled(BsLinkedin)`
 
 export const SearchBox = styled.div`
     position: relative;
-    max-width: 280px;
+    max-width: 380px;
+    width: 100%;
+    margin-left: 1rem;
 `;
 
 export const SearchInput = styled.input`   
@@ -38,7 +40,8 @@ export const SearchInput = styled.input`
     font-size: 1.4rem;
     height: 34px;
     padding: 0 .8rem 0 4rem;
-    background-color: ${({ theme }) => theme.searchBgColor};
+    background: ${({ theme }) => theme.firstBgColor};
+    color: ${({ theme }) => theme.inputTextColor};
     border: none;
     outline: none;
     border-radius: .7rem;
@@ -50,7 +53,7 @@ export const SearchInput = styled.input`
 
 export const SearchIcon = styled(BiSearchAlt2)`
     position: absolute;
-    color: #606163;
+    color: ${({ theme }) => theme.inputTextColor};
     top: 50%;
     left: 10px;
     transform: translateY(-50%);

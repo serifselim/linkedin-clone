@@ -38,6 +38,10 @@ export const UserDetails = styled.div`
 export const UserName = styled.span`
     font-size: 1.4rem;
     font-weight: 600;
+
+    & > a {
+        color: ${({ theme }) => theme.textColor};
+    }
 `;
 
 export const UserMajor = styled(ProfileMajor)`

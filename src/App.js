@@ -16,7 +16,7 @@ const App = () => {
   const dispatch = useDispatch();
   const [theme, setTheme] = useState(lightTheme);
 
-  const checkData = (data, func) => data && dispatch(func(data));
+  const checkData = (data, func) => data !== {} && dispatch(func(data));
   const changeTheme = () => {
     if (theme === darkTheme) {
       setTheme(lightTheme);
