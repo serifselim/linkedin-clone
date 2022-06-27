@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { CenterHeader, RegisterActions, RegisterContainer, RegisterContent, AvatarImage } from './Register.styled';
-import { Logo, ActionsForm, ActionInput, ActionLabel, ActionItem, ActionButton } from '../Login/Login.styled';
 import { DEFAULT_PROFILE, LOGO_URL } from '../../constants/imagePaths';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
@@ -8,16 +6,30 @@ import { useDispatch } from 'react-redux';
 import { createUser } from '../../features/user/userSlice';
 import { MdAddAPhoto } from 'react-icons/md';
 import { setImage } from '../../app/utils';
+import {
+    Logo,
+    ActionsForm,
+    ActionInput,
+    ActionLabel,
+    ActionItem,
+    ActionButton
+} from '../Login/Login.styled';
+import {
+    CenterHeader,
+    RegisterActions,
+    RegisterContainer,
+    RegisterContent,
+    AvatarImage
+} from './Register.styled';
 
 const Register = () => {
-
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [userName, setUserName] = useState('');
     const [job, setJob] = useState('');
     const [password, setPassword] = useState('');
     const [profilePic, setProfilePic] = useState('');
     const [email, setEmail] = useState('');
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();

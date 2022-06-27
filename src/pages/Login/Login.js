@@ -1,27 +1,44 @@
 import React, { useState } from 'react';
 import { LOGO_URL } from '../../constants/imagePaths';
-import { ThemeButton, LoginContainer, Logo, MainContainer, BackgroundImg, Header, Actions, RegisterButton, LoginButton, LoginContent, LoginActions, ActionItem, ActionInput, ActionLabel, ActionsForm, ActionButton } from './Login.styled';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../features/user/userSlice';
 import bgImage from '../../assets/bgImage.png';
+import {
+    ThemeButton,
+    LoginContainer,
+    Logo,
+    LogoThemeContent,
+    MainContainer,
+    BackgroundImg,
+    Header,
+    Actions,
+    RegisterButton,
+    LoginButton,
+    LoginContent,
+    LoginActions,
+    ActionItem,
+    ActionInput,
+    ActionLabel,
+    ActionsForm,
+    ActionButton
+} from './Login.styled';
 
 const Login = ({ changeTheme, theme }) => {
-
-    const { usersList } = useSelector(state => state.user);
-    const dispatch = useDispatch();
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+    const { usersList } = useSelector(state => state.user);
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const currentUser = usersList.filter((user) => user.email === email && user.password === password);
+        checkUser();
+    };
 
-        // Check User
-        currentUser.length > 0 ?
-            dispatch(loginUser(currentUser[0]))
-            :
-            alert('E-postayı ya da parolayı yanlış girdiniz !');
+    const checkUser = () => {
+        const currentUser = usersList.filter((user) => user.email === email && user.password === password);
+        if (currentUser.length > 0) dispatch(loginUser(currentUser[0]));
+        else alert('E-postayı ya da parolayı yanlış girdiniz !');
     };
 
     return (
@@ -29,10 +46,12 @@ const Login = ({ changeTheme, theme }) => {
             <LoginContent>
 
                 <Header>
-                    <Logo src={LOGO_URL} />
-                    <ThemeButton onClick={() => changeTheme()}>
-                        {theme.themeMode}
-                    </ThemeButton>
+                    <LogoThemeContent>
+                        <Logo src={LOGO_URL} />
+                        <ThemeButton onClick={() => changeTheme()}>
+                            {theme.themeMode}
+                        </ThemeButton>
+                    </LogoThemeContent>
 
                     <Actions>
                         <Link to='/register'>

@@ -1,29 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { setData } from '../../app/utils';
 
-export const userSlice = createSlice({
-    name: 'counter',
-    initialState: {
-        usersList: [],
-        currentUser: null,
-    },
-    reducers: {
-        getAllUser: (state, { payload }) => void (state.usersList = payload),
-        getUser: (state, { payload }) => void (state.currentUser = payload),
-        createUser: (state, { payload }) => {
-            state.usersList.push(payload);
-            setData('usersList', state.usersList);
-        },
-        loginUser: (state, { payload }) => {
-            state.currentUser = payload;
-            setData('currentUser', state.currentUser);
-        },
+const initialState = {
+    usersList: [],
+    currentUser: null,
+};
 
-        clearUser: (state) => {
-            setData('currentUser', null);
-            state.currentUser = null;
-        },
-    }
+const reducers = {
+    getAllUser: (state, { payload }) => void (state.usersList = payload),
+    getUser: (state, { payload }) => void (state.currentUser = payload),
+    createUser: (state, { payload }) => {
+        state.usersList.push(payload);
+        setData('usersList', state.usersList);
+    },
+    loginUser: (state, { payload }) => {
+        state.currentUser = payload;
+        setData('currentUser', state.currentUser);
+    },
+    clearUser: (state) => {
+        setData('currentUser', null);
+        state.currentUser = null;
+    },
+};
+
+export const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers
 });
 
 export const {

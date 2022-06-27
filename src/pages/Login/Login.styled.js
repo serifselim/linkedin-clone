@@ -37,10 +37,19 @@ export const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 450px){
+        flex-direction: column;
+    }
+`;
+
+export const LogoThemeContent = styled.div`
+    display: flex;
 `;
 
 export const Logo = styled.img`
     max-width: 13.5rem;
+    margin-right: 1.5rem;
 `;
 
 export const Actions = styled.ul`

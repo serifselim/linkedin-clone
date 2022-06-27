@@ -1,10 +1,22 @@
 import React from 'react';
-import { DateTime, ListItem, UserMajor, UserImage, ProfileBox, UserName, UserDetails, ContentsBox, ContentText, ContentImage, FeedbacksBox, FeedbackButton } from './Feed.styled';
 import { BiLike } from 'react-icons/bi';
 import { FaRegCommentDots } from 'react-icons/fa';
 import { RiShareForwardLine } from 'react-icons/ri';
 import { RiSendPlaneFill } from 'react-icons/ri';
-
+import {
+    DateTime,
+    ListItem,
+    UserMajor,
+    UserImage,
+    ProfileBox,
+    UserName,
+    UserDetails,
+    ContentsBox,
+    ContentText,
+    ContentImage,
+    FeedbacksBox,
+    FeedbackButton
+} from './Feed.styled';
 
 const FeedItem = ({ profileURL, name, job, lastDate, socialMediaLink, postMessage, postImageURL }) => {
     return (

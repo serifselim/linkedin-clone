@@ -1,9 +1,17 @@
 import React from 'react';
-import { DirectsList, ItemText, ListItem, MessageButton, MessageContainer, Profile, SendContent } from './MessageSender.styled';
 import { BsImage } from 'react-icons/bs';
 import { IoLogoYoutube } from 'react-icons/io5';
 import { BsFillCalendar2RangeFill, BsFileTextFill } from 'react-icons/bs';
 import { useSelector } from 'react-redux';
+import {
+    DirectsList,
+    ItemText,
+    ListItem,
+    MessageButton,
+    MessageContainer,
+    Profile,
+    SendContent
+} from './MessageSender.styled';
 
 const MessageSender = ({ setIsOpen }) => {
 

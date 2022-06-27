@@ -1,11 +1,23 @@
 import React from 'react';
-import { Background, ProfileImage, SidebarItem, SidebarContainer, SidebarProfile, SidebarViewers, ProfileMajor, ProfileTitle, ViewerContent, ViewerTitle, ViewerValue, ItemIcon, ItemText } from './Sidebar.styled';
 import { BACKGROUND_URL } from '../../constants/imagePaths';
 import { useSelector } from 'react-redux';
-
+import {
+    Background,
+    ProfileImage,
+    SidebarItem,
+    SidebarContainer,
+    SidebarProfile,
+    SidebarViewers,
+    ProfileMajor,
+    ProfileTitle,
+    ViewerContent,
+    ViewerTitle,
+    ViewerValue,
+    ItemIcon,
+    ItemText
+} from './Sidebar.styled';
 
 const Sidebar = () => {
-
     const { currentUser } = useSelector(state => state.user);
 
     return (
