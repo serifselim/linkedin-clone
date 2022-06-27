@@ -21,6 +21,6 @@ export const FlowChartData = [
         title: 'Redux',
         major: 'Yazılım * Geliştirme',
         url: 'https://redux.js.org/',
-        image: 'https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png'
+        image: 'https://miro.medium.com/max/537/1*glH-dtdIeiiwdgNRWzAJZA.png'
     },
 ];

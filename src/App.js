@@ -11,12 +11,32 @@ import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './constants/themeSettings';
 
 const App = () => {
-
   const { currentUser } = useSelector(state => state.user);
   const dispatch = useDispatch();
   const [theme, setTheme] = useState(lightTheme);
 
   const checkData = (data, func) => data && dispatch(func(data));
+
+  useEffect(() => {
+    checkAllData();
+    getCurrentTheme();
+  }, []);
+
+  const checkAllData = () => {
+    checkData(getData('usersList'), getAllUser);
+    checkData(getData('currentUser'), getUser);
+    checkData(getData('postsList'), getPosts);
+  };
+
+  const getCurrentTheme = () => {
+    const theme = getData('theme');
+
+    if (theme) {
+      theme === 'light' && setTheme(lightTheme);
+      theme === 'dark' && setTheme(darkTheme);
+    }
+  };
+
   const changeTheme = () => {
     if (theme === darkTheme) {
       setTheme(lightTheme);
@@ -26,21 +46,6 @@ const App = () => {
       setData('theme', 'dark');
     }
   };
-
-  useEffect(() => {
-    const theme = getData('theme');
-
-    // Check States Firstly
-    checkData(getData('usersList'), getAllUser);
-    checkData(getData('currentUser'), getUser);
-    checkData(getData('postsList'), getPosts);
-
-    // Get Current Theme
-    if (theme) {
-      theme === 'light' && setTheme(lightTheme);
-      theme === 'dark' && setTheme(darkTheme);
-    }
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>

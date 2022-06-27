@@ -1,5 +1,4 @@
 import React from 'react';
-import { Logo, SearchIcon, SearchInput, SearchBox, MobileHeader, HeaderContainer, HeaderContent, HeaderNav, NavList, NavListItem, HeaderProfile, DesktopHeader, ThemeIconBox } from './Header.styled';
 import { ImHome } from 'react-icons/im';
 import { BsPeopleFill } from 'react-icons/bs';
 import { MdOutlineWork } from 'react-icons/md';
@@ -7,6 +6,21 @@ import { RiMessage2Fill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { IoNotificationsSharp } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearUser } from '../../features/user/userSlice';
+import {
+    Logo,
+    SearchIcon,
+    SearchInput,
+    SearchBox,
+    MobileHeader,
+    HeaderContainer,
+    HeaderContent,
+    HeaderNav,
+    NavList,
+    NavListItem,
+    HeaderProfile,
+    DesktopHeader,
+    ThemeIconBox
+} from './Header.styled';
 
 const Header = ({ changeTheme, theme }) => {
 

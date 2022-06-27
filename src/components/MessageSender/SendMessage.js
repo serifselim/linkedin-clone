@@ -1,10 +1,25 @@
 import React, { useState } from 'react';
-import { ProfileBox, ProfileContent, SendMessageContainer, SendMessageContext, TopBox, ProfileDetails, MessageBox, MessageArea, BottomBox, BottomContent, ImageInput, SendButton, ImageInputLabel } from './MessageSender.styled';
 import { ImCancelCircle } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPostItem } from '../../features/post/postSlice';
 import { MdImageSearch } from 'react-icons/md';
 import { setImage } from '../../app/utils';
+import {
+    ProfileBox,
+    ProfileContent,
+    SendMessageContainer,
+    SendMessageContext,
+    TopBox,
+    ProfileDetails,
+    MessageBox,
+    MessageArea,
+    BottomBox,
+    BottomContent,
+    ImageInput,
+    SendButton,
+    ImageInputLabel
+} from './MessageSender.styled';
+
 
 const SendMessage = ({ setIsOpen }) => {
 
