@@ -16,7 +16,7 @@ export const HeaderContent = styled.div`
     min-height: 100%;
     margin: 0 auto;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1128px) {
         width: 95%;
     }
 `;
@@ -28,13 +28,15 @@ export const Logo = styled(BsLinkedin)`
 
 export const SearchBox = styled.div`
     position: relative;
-    max-width: 380px;
-    width: 100%;
     margin-left: 1rem;
+    margin-right: auto;
+
+    @media (max-width: 1128px) {
+        max-width: 350px;
+    }
 `;
 
 export const SearchInput = styled.input`   
-    width: 100%;
     line-height: 1.75;
     font-weight: 400;
     font-size: 1.4rem;
@@ -64,7 +66,7 @@ export const SearchIcon = styled(BiSearchAlt2)`
 `;
 
 export const HeaderNav = styled.nav`
-    margin-left: auto;
+    width: 100%;
 `;
 
 export const NavList = styled.ul`
@@ -74,7 +76,7 @@ export const NavList = styled.ul`
 export const NavListItem = styled.li`
     cursor: pointer;
     display: flex;
-    padding: 1rem;
+    padding-inline: 1rem;
     font-size: 1.2rem;
     flex-direction: column;
     align-items: center;
@@ -99,8 +101,30 @@ export const NavListItem = styled.li`
     }
 `;
 
+export const ThemeIconBox = styled.div`
+    margin-inline: 1rem;
+`;
+
 export const HeaderProfile = styled.img`
     border-radius: 50%;
     width: 25px;
     height: 25px;
+`;
+
+// Responive 
+export const DesktopHeader = styled.div`
+    display: flex;
+
+    @media (max-width: 400px) {
+        display: none;
+    }
+
+`;
+
+export const MobileHeader = styled.div`
+    display: none;
+
+    @media (max-width: 400px) {
+            display: flex;
+    }
 `;
